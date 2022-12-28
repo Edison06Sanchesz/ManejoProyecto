@@ -109,8 +109,10 @@ public class LoginMain extends javax.swing.JFrame {
         // TODO add your handling code here:
         String cedula = jtxtUsuario.getText().trim(), contrasena = jtxtContrasena.getText().trim();
         
-        if (cedula.equals("")) {
+        if (cedula.equals("") || contrasena.equals("")) {
             JOptionPane.showMessageDialog(this, "Debe ingresar todos los datos");
+        }else{
+            
         }
     }//GEN-LAST:event_jbtnIngresarActionPerformed
 
