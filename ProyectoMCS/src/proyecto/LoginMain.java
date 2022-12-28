@@ -1,5 +1,7 @@
 package proyecto;
 
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -106,6 +108,10 @@ public class LoginMain extends javax.swing.JFrame {
     private void jbtnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnIngresarActionPerformed
         // TODO add your handling code here:
         String cedula = jtxtUsuario.getText().trim(), contrasena = jtxtContrasena.getText().trim();
+        
+        if (cedula.equals("")) {
+            JOptionPane.showMessageDialog(this, "Debe ingresar todos los datos");
+        }
     }//GEN-LAST:event_jbtnIngresarActionPerformed
 
     /**
