@@ -5,10 +5,19 @@
  */
 package proyecto;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+
 /**
  *
  * @author HP
  */
 public class Conexion {
-    
+
+    public Connection conectar() {
+        Connection connect;
+        Class.forName("com.mysql.jdbc.Driver");
+        connect = DriverManager.getConnection("jdbc:mysql://localhost/mensajeria", "root", "");
+    }
+
 }
