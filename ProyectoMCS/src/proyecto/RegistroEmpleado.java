@@ -89,7 +89,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jcbxRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jcbxRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Encargado", "Repartidor" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
