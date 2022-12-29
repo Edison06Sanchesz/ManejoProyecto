@@ -6,6 +6,7 @@
 package proyecto;
 
 import java.sql.Connection;
+
 import java.sql.DriverManager;
 
 /**
@@ -14,10 +15,14 @@ import java.sql.DriverManager;
  */
 public class Conexion {
 
+
     public Connection conectar() {
         Connection connect;
         Class.forName("com.mysql.jdbc.Driver");
         connect = DriverManager.getConnection("jdbc:mysql://localhost/mensajeria", "root", "");
     }
 
+
+    
+    
 }
