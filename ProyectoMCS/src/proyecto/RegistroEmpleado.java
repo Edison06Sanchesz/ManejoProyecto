@@ -68,6 +68,11 @@ public class RegistroEmpleado extends javax.swing.JFrame {
         });
 
         jtbnGuardar.setText("Guardar");
+        jtbnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtbnGuardarActionPerformed(evt);
+            }
+        });
 
         jbtnCancelar.setText("Cancelar");
 
@@ -191,6 +196,10 @@ public class RegistroEmpleado extends javax.swing.JFrame {
     private void jbtnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnNuevoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jbtnNuevoActionPerformed
+
+    private void jtbnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtbnGuardarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtbnGuardarActionPerformed
 
     /**
      * @param args the command line arguments
