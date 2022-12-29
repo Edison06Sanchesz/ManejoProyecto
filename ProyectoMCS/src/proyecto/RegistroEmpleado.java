@@ -89,6 +89,11 @@ public class RegistroEmpleado extends javax.swing.JFrame {
         });
 
         jbtnEliminar.setText("Eliminar");
+        jbtnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnEliminarActionPerformed(evt);
+            }
+        });
 
         jbtnAsignar.setText("Asignar Paquetes ");
 
@@ -218,6 +223,10 @@ public class RegistroEmpleado extends javax.swing.JFrame {
     private void jbtnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnModificarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jbtnModificarActionPerformed
+
+    private void jbtnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnEliminarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtnEliminarActionPerformed
 
     /**
      * @param args the command line arguments
