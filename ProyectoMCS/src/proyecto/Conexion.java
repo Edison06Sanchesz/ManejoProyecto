@@ -20,6 +20,7 @@ public class Conexion {
         Connection connect;
         Class.forName("com.mysql.jdbc.Driver");
         connect = DriverManager.getConnection("jdbc:mysql://localhost/mensajeria", "root", "");
+        return connect;
     }
 
 
