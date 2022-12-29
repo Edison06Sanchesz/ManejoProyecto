@@ -61,6 +61,11 @@ public class RegistroEmpleado extends javax.swing.JFrame {
         jLabel5.setText("Tipo de Empleado");
 
         jbtnNuevo.setText("Nuevo");
+        jbtnNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnNuevoActionPerformed(evt);
+            }
+        });
 
         jtbnGuardar.setText("Guardar");
 
@@ -182,6 +187,10 @@ public class RegistroEmpleado extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jbtnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnNuevoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtnNuevoActionPerformed
 
     /**
      * @param args the command line arguments
