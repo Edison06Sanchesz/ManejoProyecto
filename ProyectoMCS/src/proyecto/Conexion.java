@@ -5,10 +5,14 @@
  */
 package proyecto;
 
+import java.sql.Connection;
+
 /**
  *
  * @author HP
  */
 public class Conexion {
-    
+    public Connection conectar(){
+        
+}
 }
