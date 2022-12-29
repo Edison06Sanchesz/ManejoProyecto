@@ -127,7 +127,9 @@ public class LoginMain extends javax.swing.JFrame {
                 ResultSet rs = ps.executeQuery();
                 
                 if (rs1.next()) {
-                    
+                    Empleados registro = new Empleados();
+                    registro.setVisible(true);
+                    this.dispose();
                 }
                 
             } catch (Exception ex) {
