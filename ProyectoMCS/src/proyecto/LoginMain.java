@@ -125,9 +125,15 @@ public class LoginMain extends javax.swing.JFrame {
                 Connection cc2 = cn2.conectar();
                 PreparedStatement ps = cc.prepareStatement("SELECT E.*, L.* FROM `login` as L,`empleados` as E WHERE  E.ced_emp='" + jtxtUsuario.getText() + "'" + "and E.rol_emp='Repartidor' AND L.ced_usr='" + jtxtUsuario.getText() + "'" + " and L.con_usr='" + jtxtContrasena.getText() + "'");
                 ResultSet rs = ps.executeQuery();
+                
+                if (rs1.next()) {
+                    
+                }
+                
             } catch (Exception ex) {
                 System.err.println(ex.getMessage());
             }
+            
         }
     }//GEN-LAST:event_jbtnIngresarActionPerformed
 
