@@ -36,14 +36,14 @@ public class RegistroEmpleado extends javax.swing.JFrame {
         jtxtNombre = new javax.swing.JTextField();
         jtxtApellido = new javax.swing.JTextField();
         jtxtSalario = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        jbtnNuevo = new javax.swing.JButton();
+        jtbnGuardar = new javax.swing.JButton();
+        jbtnCancelar = new javax.swing.JButton();
+        jbtnModificar = new javax.swing.JButton();
+        jbtnEliminar = new javax.swing.JButton();
+        jbtnAsignar = new javax.swing.JButton();
+        jbtnReportePaquetes = new javax.swing.JButton();
+        jbtnSalir = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jcbxRol = new javax.swing.JComboBox<>();
@@ -60,21 +60,21 @@ public class RegistroEmpleado extends javax.swing.JFrame {
 
         jLabel5.setText("Tipo de Empleado");
 
-        jButton1.setText("Nuevo");
+        jbtnNuevo.setText("Nuevo");
 
-        jButton2.setText("Guardar");
+        jtbnGuardar.setText("Guardar");
 
-        jButton3.setText("Cancelar");
+        jbtnCancelar.setText("Cancelar");
 
-        jButton4.setText("Modificar");
+        jbtnModificar.setText("Modificar");
 
-        jButton5.setText("Eliminar");
+        jbtnEliminar.setText("Eliminar");
 
-        jButton6.setText("Asignar Paquetes ");
+        jbtnAsignar.setText("Asignar Paquetes ");
 
-        jButton7.setText("Reporte Paquetes");
+        jbtnReportePaquetes.setText("Reporte Paquetes");
 
-        jButton8.setText("Salir");
+        jbtnSalir.setText("Salir");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -99,7 +99,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton8))
+                .addComponent(jbtnSalir))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -120,15 +120,15 @@ public class RegistroEmpleado extends javax.swing.JFrame {
                             .addComponent(jtxtNombre, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addGap(55, 55, 55)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5)
-                    .addComponent(jButton3)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbtnModificar)
+                    .addComponent(jbtnEliminar)
+                    .addComponent(jbtnCancelar)
+                    .addComponent(jtbnGuardar)
+                    .addComponent(jbtnNuevo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton7, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(jbtnAsignar, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jbtnReportePaquetes, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -138,7 +138,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jtxtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(jbtnNuevo))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -148,19 +148,19 @@ public class RegistroEmpleado extends javax.swing.JFrame {
                         .addGap(23, 23, 23))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton2)
-                            .addComponent(jButton6))
+                            .addComponent(jtbnGuardar)
+                            .addComponent(jbtnAsignar))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jtxtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton7))
+                    .addComponent(jbtnCancelar)
+                    .addComponent(jbtnReportePaquetes))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jtxtSalario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4))
+                    .addComponent(jbtnModificar))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(31, 31, 31)
@@ -169,12 +169,12 @@ public class RegistroEmpleado extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jcbxRol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton5))))
+                            .addComponent(jbtnEliminar))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 452, Short.MAX_VALUE)
-                        .addComponent(jButton8))
+                        .addComponent(jbtnSalir))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))))
@@ -219,14 +219,6 @@ public class RegistroEmpleado extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -234,7 +226,15 @@ public class RegistroEmpleado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JButton jbtnAsignar;
+    private javax.swing.JButton jbtnCancelar;
+    private javax.swing.JButton jbtnEliminar;
+    private javax.swing.JButton jbtnModificar;
+    private javax.swing.JButton jbtnNuevo;
+    private javax.swing.JButton jbtnReportePaquetes;
+    private javax.swing.JButton jbtnSalir;
     private javax.swing.JComboBox<String> jcbxRol;
+    private javax.swing.JButton jtbnGuardar;
     private javax.swing.JTextField jtxtApellido;
     private javax.swing.JTextField jtxtCedula;
     private javax.swing.JTextField jtxtNombre;
