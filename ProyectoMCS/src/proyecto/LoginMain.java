@@ -6,6 +6,7 @@
 
 package proyecto;
 
+import java.sql.Connection;
 import javax.swing.JOptionPane;
 
 /**
@@ -110,7 +111,8 @@ public class LoginMain extends javax.swing.JFrame {
         if (cedula.equals("") || contrasena.equals("")) {
             JOptionPane.showMessageDialog(this, "Debe ingresar los datos");
         }else{
-            
+            Conexion cn = new Conexion();
+                Connection cc = cn.conectar();
         }
     }//GEN-LAST:event_jbtnIngresarActionPerformed
 
