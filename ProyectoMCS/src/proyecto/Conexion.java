@@ -8,18 +8,26 @@ package proyecto;
 import java.sql.Connection;
 
 import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author HP
  */
 public class Conexion {
-
+    Connection connect;
 
     public Connection conectar() {
-        Connection connect;
-        Class.forName("com.mysql.jdbc.Driver");
-        connect = DriverManager.getConnection("jdbc:mysql://localhost/mensajeria", "root", "");
+        try {
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            connect = DriverManager.getConnection("jdbc:mysql://localhost/mensajeria", "root", "");
+            return connect;
+        } catch (SQLException ex) {
+            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
+        }
         return connect;
     }
 
