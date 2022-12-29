@@ -9,6 +9,9 @@ package proyecto;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -113,10 +116,14 @@ public class LoginMain extends javax.swing.JFrame {
         if (cedula.equals("") || contrasena.equals("")) {
             JOptionPane.showMessageDialog(this, "Debe ingresar los datos");
         }else{
-            Conexion cn = new Conexion();
-            Connection cc = cn.conectar();
-            PreparedStatement ps1 = cc.prepareStatement("SELECT E.*, L.* FROM `login` as L,`empleados` as E WHERE  E.ced_emp='" + jtxtUser.getText() + "'" + "and E.rol_emp='Encargado' AND L.ced_usr='" + jtxtUser.getText() + "'" + " and L.con_usr='" + jtxtPass.getText() + "'");
-            ResultSet rs1 = ps1.executeQuery();
+            try {
+                Conexion cn = new Conexion();
+                Connection cc = cn.conectar();
+                PreparedStatement ps1 = cc.prepareStatement("SELECT E.*, L.* FROM `login` as L,`empleados` as E WHERE  E.ced_emp='" + jtxtUsuario.getText() + "'" + "and E.rol_emp='Encargado' AND L.ced_usr='" + jtxtUsuario.getText() + "'" + " and L.con_usr='" + jtxtContrasena.getText() + "'");
+                ResultSet rs1 = ps1.executeQuery();
+            } catch (Exception ex) {
+                System.err.println(ex.getMessage());
+            }
         }
     }//GEN-LAST:event_jbtnIngresarActionPerformed
 
