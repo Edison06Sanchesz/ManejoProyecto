@@ -7,6 +7,8 @@
 package proyecto;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 
 /**
@@ -112,7 +114,9 @@ public class LoginMain extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Debe ingresar los datos");
         }else{
             Conexion cn = new Conexion();
-                Connection cc = cn.conectar();
+            Connection cc = cn.conectar();
+            PreparedStatement ps1 = cc.prepareStatement("SELECT E.*, L.* FROM `login` as L,`empleados` as E WHERE  E.ced_emp='" + jtxtUser.getText() + "'" + "and E.rol_emp='Encargado' AND L.ced_usr='" + jtxtUser.getText() + "'" + " and L.con_usr='" + jtxtPass.getText() + "'");
+            ResultSet rs1 = ps1.executeQuery();
         }
     }//GEN-LAST:event_jbtnIngresarActionPerformed
 
