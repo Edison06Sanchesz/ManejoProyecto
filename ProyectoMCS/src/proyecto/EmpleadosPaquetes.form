@@ -40,10 +40,14 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
                           <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-                          <Component id="jbtnReportePaquetes" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jbtnReportePaquetes" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="jbtnEntregaPaquetes" min="-2" pref="151" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
               </Group>
@@ -68,7 +72,10 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jScrollPane2" min="-2" pref="170" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-              <Component id="jbtnReportePaquetes" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jbtnReportePaquetes" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbtnEntregaPaquetes" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace pref="234" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -117,6 +124,11 @@
     <Component class="javax.swing.JButton" name="jbtnReportePaquetes">
       <Properties>
         <Property name="text" type="java.lang.String" value="Reporte de Paquetes"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbtnEntregaPaquetes">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Entregar Paquete"/>
       </Properties>
     </Component>
   </SubComponents>

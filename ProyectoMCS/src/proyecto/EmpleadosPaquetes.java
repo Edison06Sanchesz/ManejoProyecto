@@ -36,6 +36,7 @@ public class EmpleadosPaquetes extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jtblPaquetes = new javax.swing.JTable();
         jbtnReportePaquetes = new javax.swing.JButton();
+        jbtnEntregaPaquetes = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,6 +51,8 @@ public class EmpleadosPaquetes extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jtblPaquetes);
 
         jbtnReportePaquetes.setText("Reporte de Paquetes");
+
+        jbtnEntregaPaquetes.setText("Entregar Paquete");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -69,10 +72,13 @@ public class EmpleadosPaquetes extends javax.swing.JFrame {
                             .addComponent(jtxtIDPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(135, 135, 135)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jbtnReportePaquetes))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jbtnReportePaquetes)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jbtnEntregaPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(173, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -91,7 +97,9 @@ public class EmpleadosPaquetes extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(51, 51, 51)
-                .addComponent(jbtnReportePaquetes)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbtnReportePaquetes)
+                    .addComponent(jbtnEntregaPaquetes))
                 .addContainerGap(234, Short.MAX_VALUE))
         );
 
@@ -139,6 +147,7 @@ public class EmpleadosPaquetes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JButton jbtnEntregaPaquetes;
     private javax.swing.JButton jbtnReportePaquetes;
     private javax.swing.JTable jtblEmpleado;
     private javax.swing.JTable jtblPaquetes;
