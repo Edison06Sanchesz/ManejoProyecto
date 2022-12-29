@@ -6,6 +6,8 @@
 
 package proyecto;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author HP
@@ -104,6 +106,12 @@ public class LoginMain extends javax.swing.JFrame {
     private void jbtnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnIngresarActionPerformed
         // TODO add your handling code here:
         String cedula = jtxtUsuario.getText().trim(), contrasena = jtxtContrasena.getText().trim();
+        
+        if (cedula.equals("") || contrasena.equals("")) {
+            JOptionPane.showMessageDialog(this, "Debe ingresar los datos");
+        }else{
+            
+        }
     }//GEN-LAST:event_jbtnIngresarActionPerformed
 
     /**
