@@ -45,7 +45,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
         jbtnReportePaquetes = new javax.swing.JButton();
         jbtnSalir = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jtblEmpleados = new javax.swing.JTable();
         jcbxRol = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -76,7 +76,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
 
         jbtnSalir.setText("Salir");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jtblEmpleados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -87,7 +87,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jtblEmpleados);
 
         jcbxRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Encargado", "Repartidor" }));
 
@@ -225,7 +225,6 @@ public class RegistroEmpleado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JButton jbtnAsignar;
     private javax.swing.JButton jbtnCancelar;
     private javax.swing.JButton jbtnEliminar;
@@ -234,6 +233,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
     private javax.swing.JButton jbtnReportePaquetes;
     private javax.swing.JButton jbtnSalir;
     private javax.swing.JComboBox<String> jcbxRol;
+    private javax.swing.JTable jtblEmpleados;
     private javax.swing.JButton jtbnGuardar;
     private javax.swing.JTextField jtxtApellido;
     private javax.swing.JTextField jtxtCedula;
