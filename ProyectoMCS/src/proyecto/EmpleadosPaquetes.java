@@ -37,6 +37,7 @@ public class EmpleadosPaquetes extends javax.swing.JFrame {
         jtblPaquetes = new javax.swing.JTable();
         jbtnReportePaquetes = new javax.swing.JButton();
         jbtnEntregaPaquetes = new javax.swing.JButton();
+        jbtnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,6 +54,8 @@ public class EmpleadosPaquetes extends javax.swing.JFrame {
         jbtnReportePaquetes.setText("Reporte de Paquetes");
 
         jbtnEntregaPaquetes.setText("Entregar Paquete");
+
+        jbtnSalir.setText("Salir");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -78,7 +81,10 @@ public class EmpleadosPaquetes extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jbtnReportePaquetes)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jbtnEntregaPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(jbtnEntregaPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(315, 315, 315)
+                        .addComponent(jbtnSalir)))
                 .addContainerGap(173, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -100,7 +106,9 @@ public class EmpleadosPaquetes extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbtnReportePaquetes)
                     .addComponent(jbtnEntregaPaquetes))
-                .addContainerGap(234, Short.MAX_VALUE))
+                .addGap(68, 68, 68)
+                .addComponent(jbtnSalir)
+                .addContainerGap(143, Short.MAX_VALUE))
         );
 
         pack();
@@ -149,6 +157,7 @@ public class EmpleadosPaquetes extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton jbtnEntregaPaquetes;
     private javax.swing.JButton jbtnReportePaquetes;
+    private javax.swing.JButton jbtnSalir;
     private javax.swing.JTable jtblEmpleado;
     private javax.swing.JTable jtblPaquetes;
     private javax.swing.JTextField jtxtIDPaquete;

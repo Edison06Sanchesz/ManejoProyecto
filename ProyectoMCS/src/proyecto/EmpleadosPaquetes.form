@@ -50,6 +50,10 @@
                           </Group>
                       </Group>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="315" max="-2" attributes="0"/>
+                      <Component id="jbtnSalir" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace pref="173" max="32767" attributes="0"/>
           </Group>
@@ -76,7 +80,9 @@
                   <Component id="jbtnReportePaquetes" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jbtnEntregaPaquetes" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="234" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+              <Component id="jbtnSalir" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="143" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -129,6 +135,11 @@
     <Component class="javax.swing.JButton" name="jbtnEntregaPaquetes">
       <Properties>
         <Property name="text" type="java.lang.String" value="Entregar Paquete"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbtnSalir">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Salir"/>
       </Properties>
     </Component>
   </SubComponents>
