@@ -123,6 +123,8 @@ public class LoginMain extends javax.swing.JFrame {
                 ResultSet rs1 = ps1.executeQuery();
                 Conexion cn2 = new Conexion();
                 Connection cc2 = cn2.conectar();
+                PreparedStatement ps = cc.prepareStatement("SELECT E.*, L.* FROM `login` as L,`empleados` as E WHERE  E.ced_emp='" + jtxtUsuario.getText() + "'" + "and E.rol_emp='Repartidor' AND L.ced_usr='" + jtxtUsuario.getText() + "'" + " and L.con_usr='" + jtxtContrasena.getText() + "'");
+                ResultSet rs = ps.executeQuery();
             } catch (Exception ex) {
                 System.err.println(ex.getMessage());
             }
