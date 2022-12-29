@@ -130,6 +130,8 @@ public class LoginMain extends javax.swing.JFrame {
                     Empleados registro = new Empleados();
                     registro.setVisible(true);
                     this.dispose();
+                } else if (rs.next()) {
+                    
                 }
                 
             } catch (Exception ex) {
