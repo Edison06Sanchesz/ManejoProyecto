@@ -14,7 +14,7 @@ public class EmpleadosPaquetes extends javax.swing.JFrame {
     /**
      * Creates new form EmpleadosPaquetes
      */
-    public EmpleadosPaquetes() {
+    public EmpleadosPaquetes(String cedula) {
         initComponents();
     }
 
