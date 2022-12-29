@@ -144,7 +144,7 @@ public class EmpleadosPaquetes extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EmpleadosPaquetes().setVisible(true);
+                new EmpleadosPaquetes("").setVisible(true);
             }
         });
     }
