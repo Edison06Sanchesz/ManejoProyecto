@@ -102,6 +102,11 @@ public class RegistroEmpleado extends javax.swing.JFrame {
                 String sql = "insert into empleado (ced_emp,nom_emp,ape_emp,sal_emp,rol_emp,ruta_emp) values"
                         + "(?,?,?,?,?,'No asignado')";
                 PreparedStatement psd = cc.prepareStatement(sql);
+                psd.setString(1, ced_emp);
+                psd.setString(2, nom_emp);
+                psd.setString(3, ape_emp);
+                psd.setString(4, jtxtSalario.getText());
+                psd.setString(5, rol_emp);
             } catch (SQLException ex) {
                 Logger.getLogger(RegistroEmpleado.class.getName()).log(Level.SEVERE, null, ex);
             }
