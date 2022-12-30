@@ -162,6 +162,7 @@ public class LoginMain extends javax.swing.JFrame {
     private void jbtnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnRegistrarseActionPerformed
         // TODO add your handling code here:
         Registro r = new Registro();
+        r.setVisible(true);
     }//GEN-LAST:event_jbtnRegistrarseActionPerformed
 
     /**
