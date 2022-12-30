@@ -24,7 +24,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
     public RegistroEmpleado() {
         initComponents();
     }
-    public void cancelar(){
+    public void Cancelar(){
         this.limpiarTexto();
         this.bloquearTextos();
         this.bloquearBotones();
@@ -311,16 +311,17 @@ public class RegistroEmpleado extends javax.swing.JFrame {
 
     private void jbtnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnNuevoActionPerformed
         // TODO add your handling code here:
-        this.Nuevo();
+        Nuevo();
     }//GEN-LAST:event_jbtnNuevoActionPerformed
 
     private void jbtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnGuardarActionPerformed
         // TODO add your handling code here:
+        Guardar();
     }//GEN-LAST:event_jbtnGuardarActionPerformed
 
     private void jbtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnCancelarActionPerformed
         // TODO add your handling code here:
-        this.cancelar();
+        Cancelar();
     }//GEN-LAST:event_jbtnCancelarActionPerformed
 
     private void jbtnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnModificarActionPerformed
