@@ -25,7 +25,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
         jtxtNombre.setText("");
         jtxtApellido.setText("");
         jtxtSalario.setText("");
-        jcbxRol.setSelectedItem("");
+        jcbxRol.setSelectedItem("Encargado");
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -227,6 +227,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
 
     private void jbtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnCancelarActionPerformed
         // TODO add your handling code here:
+        this.cancelar();
     }//GEN-LAST:event_jbtnCancelarActionPerformed
 
     private void jbtnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnModificarActionPerformed
