@@ -134,9 +134,10 @@ public class LoginMain extends javax.swing.JFrame {
                     EmpleadosPaquetes nuevo = new EmpleadosPaquetes(jtxtUsuario.getText());
                     nuevo.setVisible(true);
                     this.dispose();
-                }else{
+                } else {
                      PreparedStatement ps2 = cc2.prepareStatement("select * from admins where ced_admin = '"
                             + jtxtUsuario.getText() + "' and con_admin = '" + jtxtContrasena.getText() + "'");
+                     ResultSet rs2 = ps2.executeQuery();
                 }
                 
             } catch (Exception ex) {
