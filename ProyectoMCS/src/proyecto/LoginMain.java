@@ -143,7 +143,7 @@ public class LoginMain extends javax.swing.JFrame {
                           empleados.setVisible(true);
                           this.dispose();
                       }else{
-                          
+                          JOptionPane.showMessageDialog(this, "Cédula o contraseña incorrectos");
                       }
                 }
                 
