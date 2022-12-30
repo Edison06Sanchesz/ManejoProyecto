@@ -44,6 +44,8 @@ public class Datos extends javax.swing.JFrame {
         jbtnActualizar = new javax.swing.JButton();
         jbtnBorrar = new javax.swing.JButton();
         jbtnSalir = new javax.swing.JButton();
+        jbtnAsignarPaquetes = new javax.swing.JButton();
+        jbtnReportePaquetes = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -81,7 +83,7 @@ public class Datos extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
+                .addContainerGap(15, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jbtnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jbtnBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -110,6 +112,10 @@ public class Datos extends javax.swing.JFrame {
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
+        jbtnAsignarPaquetes.setText("Asignar Paquetes");
+
+        jbtnReportePaquetes.setText("Reporte Paquetes");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -129,9 +135,13 @@ public class Datos extends javax.swing.JFrame {
                     .addComponent(jtxtApellido)
                     .addComponent(jtxtSalario, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
                     .addComponent(jcbxRol, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(150, 150, 150)
+                .addGap(156, 156, 156)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(269, Short.MAX_VALUE))
+                .addGap(75, 75, 75)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jbtnAsignarPaquetes)
+                    .addComponent(jbtnReportePaquetes))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,7 +170,12 @@ public class Datos extends javax.swing.JFrame {
                             .addComponent(jcbxRol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(25, 25, 25)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(93, 93, 93)
+                        .addComponent(jbtnAsignarPaquetes)
+                        .addGap(18, 18, 18)
+                        .addComponent(jbtnReportePaquetes)))
                 .addContainerGap(354, Short.MAX_VALUE))
         );
 
@@ -214,10 +229,12 @@ public class Datos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbtnActualizar;
+    private javax.swing.JButton jbtnAsignarPaquetes;
     private javax.swing.JButton jbtnBorrar;
     private javax.swing.JButton jbtnCancelar;
     private javax.swing.JButton jbtnConfirmar;
     private javax.swing.JButton jbtnNuevo;
+    private javax.swing.JButton jbtnReportePaquetes;
     private javax.swing.JButton jbtnSalir;
     private javax.swing.JComboBox<String> jcbxRol;
     private javax.swing.JTextField jtxtApellido;
