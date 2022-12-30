@@ -56,7 +56,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
     public void desbloquearBotones(){
         jbtnNuevo.setEnabled(false);
         jbtnGuardar.setEnabled(true);
-        jbtnModificar.setEnabled(true);
+        jbtnModificar.setEnabled(false);
         jbtnEliminar.setEnabled(true);
         jbtnCancelar.setEnabled(true);
     }
