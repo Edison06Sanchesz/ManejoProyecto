@@ -27,6 +27,15 @@ public class RegistroEmpleado extends javax.swing.JFrame {
         jtxtSalario.setText("");
         jcbxRol.setSelectedItem("Encargado");
     }
+    
+    public void bloquearTextos(){
+        jtxtCedula.setEditable(false);
+        jtxtNombre.setEditable(false);
+        jtxtApellido.setEditable(false);
+        jtxtSalario.setEditable(false);
+        jcbxRol.setEnabled(false);
+             
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
