@@ -62,7 +62,7 @@ public class Registro extends javax.swing.JFrame {
                             .addComponent(jtxtUsuario, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(168, 168, 168)
+                        .addGap(158, 158, 158)
                         .addComponent(jtbnGuardar)))
                 .addContainerGap(153, Short.MAX_VALUE))
         );
