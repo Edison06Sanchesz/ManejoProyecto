@@ -139,7 +139,9 @@ public class LoginMain extends javax.swing.JFrame {
                             + jtxtUsuario.getText() + "' and con_admin = '" + jtxtContrasena.getText() + "'");
                      ResultSet rs2 = ps2.executeQuery();
                       if (rs2.next()) {
-                          
+                          Datos empleados = new Datos();
+                          empleados.setVisible(true);
+                          this.dispose();
                       }
                 }
                 
