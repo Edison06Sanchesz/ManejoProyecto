@@ -144,6 +144,8 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace pref="21" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="jbtnSalir" alignment="1" min="-2" pref="79" max="-2" attributes="0"/>
+                      <Component id="jbtnBorrar" alignment="1" min="-2" pref="79" max="-2" attributes="0"/>
                       <Component id="jbtnActualizar" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jbtnCancelar" alignment="0" max="32767" attributes="0"/>
@@ -166,7 +168,11 @@
                   <Component id="jbtnCancelar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jbtnActualizar" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="77" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jbtnBorrar" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="jbtnSalir" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="14" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -190,6 +196,16 @@
         <Component class="javax.swing.JButton" name="jbtnActualizar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Actualizar"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jbtnBorrar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Borrar"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jbtnSalir">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Salir"/>
           </Properties>
         </Component>
       </SubComponents>

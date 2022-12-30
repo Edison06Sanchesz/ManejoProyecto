@@ -42,6 +42,8 @@ public class Datos extends javax.swing.JFrame {
         jbtnConfirmar = new javax.swing.JButton();
         jbtnCancelar = new javax.swing.JButton();
         jbtnActualizar = new javax.swing.JButton();
+        jbtnBorrar = new javax.swing.JButton();
+        jbtnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,6 +72,10 @@ public class Datos extends javax.swing.JFrame {
 
         jbtnActualizar.setText("Actualizar");
 
+        jbtnBorrar.setText("Borrar");
+
+        jbtnSalir.setText("Salir");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -77,6 +83,8 @@ public class Datos extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(21, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jbtnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbtnBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jbtnActualizar)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jbtnCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -95,7 +103,11 @@ public class Datos extends javax.swing.JFrame {
                 .addComponent(jbtnCancelar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jbtnActualizar)
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jbtnBorrar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jbtnSalir)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -202,9 +214,11 @@ public class Datos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbtnActualizar;
+    private javax.swing.JButton jbtnBorrar;
     private javax.swing.JButton jbtnCancelar;
     private javax.swing.JButton jbtnConfirmar;
     private javax.swing.JButton jbtnNuevo;
+    private javax.swing.JButton jbtnSalir;
     private javax.swing.JComboBox<String> jcbxRol;
     private javax.swing.JTextField jtxtApellido;
     private javax.swing.JTextField jtxtCedula;
