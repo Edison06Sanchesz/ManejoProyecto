@@ -51,6 +51,11 @@ public class LoginMain extends javax.swing.JFrame {
         jLabel3.setText("BIENVENIDO A SERVIFASTH");
 
         jbtnRegistrarse.setText("Registrarse");
+        jbtnRegistrarse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnRegistrarseActionPerformed(evt);
+            }
+        });
 
         jbtnIngresar.setText("Ingresar");
         jbtnIngresar.addActionListener(new java.awt.event.ActionListener() {
@@ -153,6 +158,11 @@ public class LoginMain extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_jbtnIngresarActionPerformed
+
+    private void jbtnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnRegistrarseActionPerformed
+        // TODO add your handling code here:
+        Registro r = new Registro();
+    }//GEN-LAST:event_jbtnRegistrarseActionPerformed
 
     /**
      * @param args the command line arguments
