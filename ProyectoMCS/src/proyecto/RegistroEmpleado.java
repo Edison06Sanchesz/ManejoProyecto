@@ -6,6 +6,10 @@
 package proyecto;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -85,17 +89,22 @@ public class RegistroEmpleado extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Ingrese un rol para el empleado");
             jcbxRol.requestFocus();
         }else{
-            String ced_emp, nom_emp, ape_emp, rol_emp;
-            Integer sal_emp;
-            Conexion cn = new Conexion();
-            Connection cc = cn.conectar();
-            ced_emp = jtxtCedula.getText();
-            nom_emp = jtxtNombre.getText();
-            ape_emp = jtxtApellido.getText();
-            sal_emp = Integer.valueOf(jtxtSalario.getText());
-            rol_emp = jcbxRol.getSelectedItem().toString();
-            String sql = "insert into empleado (ced_emp,nom_emp,ape_emp,sal_emp,rol_emp,ruta_emp) values"
-                    + "(?,?,?,?,?,'No asignado')";
+            try {
+                String ced_emp, nom_emp, ape_emp, rol_emp;
+                Integer sal_emp;
+                Conexion cn = new Conexion();
+                Connection cc = cn.conectar();
+                ced_emp = jtxtCedula.getText();
+                nom_emp = jtxtNombre.getText();
+                ape_emp = jtxtApellido.getText();
+                sal_emp = Integer.valueOf(jtxtSalario.getText());
+                rol_emp = jcbxRol.getSelectedItem().toString();
+                String sql = "insert into empleado (ced_emp,nom_emp,ape_emp,sal_emp,rol_emp,ruta_emp) values"
+                        + "(?,?,?,?,?,'No asignado')";
+                PreparedStatement psd = cc.prepareStatement(sql);
+            } catch (SQLException ex) {
+                Logger.getLogger(RegistroEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
     /**
