@@ -57,7 +57,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
         jbtnNuevo.setEnabled(false);
         jbtnGuardar.setEnabled(true);
         jbtnModificar.setEnabled(false);
-        jbtnEliminar.setEnabled(true);
+        jbtnEliminar.setEnabled(false);
         jbtnCancelar.setEnabled(true);
     }
     /**
