@@ -79,6 +79,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
             jtxtApellido.requestFocus();
         }else if(jtxtSalario.getText().isEmpty()){
             JOptionPane.showMessageDialog(null, "Ingrese un salario");
+            jtxtSalario.requestFocus();
         }else if(jcbxRol.getSelectedItem().toString().equals("")){
             JOptionPane.showMessageDialog(null, "Ingrese un rol para el empleado");
         }
