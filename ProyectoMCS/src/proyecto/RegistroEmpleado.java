@@ -39,7 +39,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
     }
     
     public void bloquearBotones(){
-        jbtnNuevo.setEnabled(false);
+        jbtnNuevo.setEnabled(true);
         jbtnGuardar.setEnabled(false);
         jbtnEliminar.setEnabled(false);
         jbtnModificar.setEnabled(false);
