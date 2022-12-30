@@ -22,6 +22,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
         jtxtNombre.setText("");
         jtxtApellido.setText("");
         jtxtSalario.setText("");
+        jcbxRol.setSelectedItem("");
     }
     /**
      * This method is called from within the constructor to initialize the form.
