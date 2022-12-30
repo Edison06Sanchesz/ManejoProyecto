@@ -17,7 +17,12 @@ public class RegistroEmpleado extends javax.swing.JFrame {
     public RegistroEmpleado() {
         initComponents();
     }
-
+    public void limpiarTexto(){
+        jtxtCedula.setText("");
+        jtxtNombre.setText("");
+        jtxtApellido.setText("");
+        jtxtSalario.setText("");
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
