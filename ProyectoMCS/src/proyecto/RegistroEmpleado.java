@@ -107,9 +107,14 @@ public class RegistroEmpleado extends javax.swing.JFrame {
                 psd.setString(3, ape_emp);
                 psd.setString(4, jtxtSalario.getText());
                 psd.setString(5, rol_emp);
+                 int n1 = psd.executeUpdate();
+                 if (n1 > 0){
+                     JOptionPane.showMessageDialog(null, "Se guardo correctamente");
+                 }
             } catch (SQLException ex) {
                 Logger.getLogger(RegistroEmpleado.class.getName()).log(Level.SEVERE, null, ex);
             }
+           
         }
     }
     /**
