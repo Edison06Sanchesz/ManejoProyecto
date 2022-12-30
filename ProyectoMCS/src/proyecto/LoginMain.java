@@ -135,7 +135,8 @@ public class LoginMain extends javax.swing.JFrame {
                     nuevo.setVisible(true);
                     this.dispose();
                 }else{
-                    
+                     PreparedStatement ps2 = cc2.prepareStatement("select * from admins where ced_admin = '"
+                            + jtxtUsuario.getText() + "' and con_admin = '" + jtxtContrasena.getText() + "'");
                 }
                 
             } catch (Exception ex) {
