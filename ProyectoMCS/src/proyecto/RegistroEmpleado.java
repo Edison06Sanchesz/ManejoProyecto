@@ -110,6 +110,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
                  int n1 = psd.executeUpdate();
                  if (n1 > 0){
                      JOptionPane.showMessageDialog(null, "Se guardo correctamente");
+                     this.bloquearBotones();
                  }
             } catch (SQLException ex) {
                 Logger.getLogger(RegistroEmpleado.class.getName()).log(Level.SEVERE, null, ex);
