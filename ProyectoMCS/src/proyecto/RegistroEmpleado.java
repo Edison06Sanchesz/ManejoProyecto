@@ -121,17 +121,23 @@ public class RegistroEmpleado extends javax.swing.JFrame {
     }
     
     public void Modificar(){
-        String ced_emp, nom_emp, ape_emp, sal_emp,rol_emp;
-        Conexion cn = new Conexion();
-        Connection cc = cn.conectar();
-        ced_emp = jtxtCedula.getText();
-        nom_emp = jtxtNombre.getText();
-        ape_emp = jtxtApellido.getText();
-        sal_emp = jtxtSalario.getText();
-        rol_emp = jcbxRol.getSelectedItem().toString();
-        
-        String sql = "update empleados set nom_emp='" + nom_emp + "',ape_emp='" + ape_emp + "',sal_emp='" + sal_emp
+        try {
+            String ced_emp, nom_emp, ape_emp, sal_emp,rol_emp;
+            Conexion cn = new Conexion();
+            Connection cc = cn.conectar();
+            ced_emp = jtxtCedula.getText();
+            nom_emp = jtxtNombre.getText();
+            ape_emp = jtxtApellido.getText();
+            sal_emp = jtxtSalario.getText();
+            rol_emp = jcbxRol.getSelectedItem().toString();
+            String sql = "update empleados set nom_emp='" + nom_emp + "',ape_emp='" + ape_emp + "',sal_emp='" + sal_emp
                     + "',rol_emp='" + rol_emp + "'Where ced_emp='" + ced_emp + "'";
+            PreparedStatement psd = cc.prepareStatement(sql);
+            psd.executeUpdate();
+            
+                    } catch (SQLException ex) {
+            Logger.getLogger(RegistroEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     /**
      * This method is called from within the constructor to initialize the form.
