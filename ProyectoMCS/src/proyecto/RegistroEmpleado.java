@@ -19,6 +19,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
     }
     public void cancelar(){
         this.limpiarTexto();
+        this.bloquearTextos();
     }
     public void limpiarTexto(){
         jtxtCedula.setText("");
