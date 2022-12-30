@@ -111,6 +111,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
                  if (n1 > 0){
                      JOptionPane.showMessageDialog(null, "Se guardo correctamente");
                      this.bloquearBotones();
+                     this.bloquearTextos();
                  }
             } catch (SQLException ex) {
                 Logger.getLogger(RegistroEmpleado.class.getName()).log(Level.SEVERE, null, ex);
