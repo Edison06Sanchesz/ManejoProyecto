@@ -72,7 +72,8 @@ public class RegistroEmpleado extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Ingrese el N. de cedula");
             jtxtCedula.requestFocus();
         }else if (jtxtNombre.getText().isEmpty()){
-          JOptionPane.showMessageDialog(null, "Ingrese un Nombre");                     
+          JOptionPane.showMessageDialog(null, "Ingrese un Nombre"); 
+          jtxtNombre.requestFocus();
         }else if (jtxtApellido.getText().isEmpty()){
             JOptionPane.showMessageDialog(null, "Ingrese un Apellido");
         }else if(jtxtSalario.getText().isEmpty()){
