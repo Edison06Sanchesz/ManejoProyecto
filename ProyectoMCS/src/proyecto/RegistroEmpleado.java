@@ -60,6 +60,11 @@ public class RegistroEmpleado extends javax.swing.JFrame {
         jbtnEliminar.setEnabled(false);
         jbtnCancelar.setEnabled(true);
     }
+    public void Nuevo(){
+        this.debloquearTextos();
+        this.desbloquearBotones();
+        this.limpiarTexto();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
