@@ -138,6 +138,9 @@ public class LoginMain extends javax.swing.JFrame {
                      PreparedStatement ps2 = cc2.prepareStatement("select * from admins where ced_admin = '"
                             + jtxtUsuario.getText() + "' and con_admin = '" + jtxtContrasena.getText() + "'");
                      ResultSet rs2 = ps2.executeQuery();
+                      if (rs2.next()) {
+                          
+                      }
                 }
                 
             } catch (Exception ex) {
