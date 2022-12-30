@@ -86,7 +86,8 @@ public class RegistroEmpleado extends javax.swing.JFrame {
         }else{
             String ced_emp, nom_emp, ape_emp, rol_emp;
             Integer sal_emp;
-            
+            Conexion cn = new Conexion();
+            Connection cc = cn.conectar();
         }
     }
     /**
