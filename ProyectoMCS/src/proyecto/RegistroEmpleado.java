@@ -5,6 +5,8 @@
  */
 package proyecto;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author edison
@@ -66,7 +68,9 @@ public class RegistroEmpleado extends javax.swing.JFrame {
         this.limpiarTexto();
     }
     public void Guardar(){
-        
+        if(jtxtCedula.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Ingrese el N. de cedula");
+        }
     }
     /**
      * This method is called from within the constructor to initialize the form.
