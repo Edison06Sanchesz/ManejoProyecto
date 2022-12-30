@@ -134,6 +134,8 @@ public class LoginMain extends javax.swing.JFrame {
                     EmpleadosPaquetes nuevo = new EmpleadosPaquetes(jtxtUsuario.getText());
                     nuevo.setVisible(true);
                     this.dispose();
+                }else{
+                    
                 }
                 
             } catch (Exception ex) {
