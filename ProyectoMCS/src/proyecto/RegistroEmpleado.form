@@ -57,7 +57,7 @@
                   <Component id="jbtnModificar" min="-2" max="-2" attributes="0"/>
                   <Component id="jbtnEliminar" min="-2" max="-2" attributes="0"/>
                   <Component id="jbtnCancelar" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jtbnGuardar" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbtnGuardar" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="jbtnNuevo" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="19" max="32767" attributes="0"/>
@@ -89,7 +89,7 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jtbnGuardar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jbtnGuardar" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jbtnAsignar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -177,12 +177,12 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnNuevoActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jtbnGuardar">
+    <Component class="javax.swing.JButton" name="jbtnGuardar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Guardar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtbnGuardarActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnGuardarActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jbtnCancelar">

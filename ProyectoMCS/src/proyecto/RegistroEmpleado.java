@@ -35,7 +35,11 @@ public class RegistroEmpleado extends javax.swing.JFrame {
         jtxtApellido.setEditable(false);
         jtxtSalario.setEditable(false);
         jcbxRol.setEnabled(false);
-             
+    }
+    
+    public void bloquearBotones(){
+        jbtnNuevo.setEnabled(false);
+        
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -56,7 +60,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
         jtxtApellido = new javax.swing.JTextField();
         jtxtSalario = new javax.swing.JTextField();
         jbtnNuevo = new javax.swing.JButton();
-        jtbnGuardar = new javax.swing.JButton();
+        jbtnGuardar = new javax.swing.JButton();
         jbtnCancelar = new javax.swing.JButton();
         jbtnModificar = new javax.swing.JButton();
         jbtnEliminar = new javax.swing.JButton();
@@ -86,10 +90,10 @@ public class RegistroEmpleado extends javax.swing.JFrame {
             }
         });
 
-        jtbnGuardar.setText("Guardar");
-        jtbnGuardar.addActionListener(new java.awt.event.ActionListener() {
+        jbtnGuardar.setText("Guardar");
+        jbtnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtbnGuardarActionPerformed(evt);
+                jbtnGuardarActionPerformed(evt);
             }
         });
 
@@ -167,7 +171,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
                     .addComponent(jbtnModificar)
                     .addComponent(jbtnEliminar)
                     .addComponent(jbtnCancelar)
-                    .addComponent(jtbnGuardar)
+                    .addComponent(jbtnGuardar)
                     .addComponent(jbtnNuevo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -192,7 +196,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
                         .addGap(23, 23, 23))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jtbnGuardar)
+                            .addComponent(jbtnGuardar)
                             .addComponent(jbtnAsignar))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -231,9 +235,9 @@ public class RegistroEmpleado extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jbtnNuevoActionPerformed
 
-    private void jtbnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtbnGuardarActionPerformed
+    private void jbtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnGuardarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jtbnGuardarActionPerformed
+    }//GEN-LAST:event_jbtnGuardarActionPerformed
 
     private void jbtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnCancelarActionPerformed
         // TODO add your handling code here:
@@ -293,13 +297,13 @@ public class RegistroEmpleado extends javax.swing.JFrame {
     private javax.swing.JButton jbtnAsignar;
     private javax.swing.JButton jbtnCancelar;
     private javax.swing.JButton jbtnEliminar;
+    private javax.swing.JButton jbtnGuardar;
     private javax.swing.JButton jbtnModificar;
     private javax.swing.JButton jbtnNuevo;
     private javax.swing.JButton jbtnReportePaquetes;
     private javax.swing.JButton jbtnSalir;
     private javax.swing.JComboBox<String> jcbxRol;
     private javax.swing.JTable jtblEmpleados;
-    private javax.swing.JButton jtbnGuardar;
     private javax.swing.JTextField jtxtApellido;
     private javax.swing.JTextField jtxtCedula;
     private javax.swing.JTextField jtxtNombre;
