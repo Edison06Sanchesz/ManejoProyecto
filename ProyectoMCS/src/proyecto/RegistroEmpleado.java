@@ -45,6 +45,13 @@ public class RegistroEmpleado extends javax.swing.JFrame {
         jbtnModificar.setEnabled(false);
         jbtnCancelar.setEnabled(false);
     }
+    
+    public void debloquearTextos(){
+        jtxtCedula.setEditable(true);
+        jtxtNombre.setEditable(true);
+        jtxtApellido.setEditable(true);
+        jtxtSalario.setEditable(true);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
