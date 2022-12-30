@@ -142,6 +142,8 @@ public class LoginMain extends javax.swing.JFrame {
                           Datos empleados = new Datos();
                           empleados.setVisible(true);
                           this.dispose();
+                      }else{
+                          
                       }
                 }
                 
