@@ -83,6 +83,10 @@ public class RegistroEmpleado extends javax.swing.JFrame {
         }else if(jcbxRol.getSelectedItem().toString().equals("")){
             JOptionPane.showMessageDialog(null, "Ingrese un rol para el empleado");
             jcbxRol.requestFocus();
+        }else{
+            String ced_emp, nom_emp, ape_emp, rol_emp;
+            Integer sal_emp;
+            
         }
     }
     /**
