@@ -17,6 +17,9 @@ public class RegistroEmpleado extends javax.swing.JFrame {
     public RegistroEmpleado() {
         initComponents();
     }
+    public void cancelar(){
+        this.limpiarTexto();
+    }
     public void limpiarTexto(){
         jtxtCedula.setText("");
         jtxtNombre.setText("");
