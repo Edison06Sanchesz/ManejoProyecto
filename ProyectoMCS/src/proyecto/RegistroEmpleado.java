@@ -121,7 +121,10 @@ public class RegistroEmpleado extends javax.swing.JFrame {
     }
     
     public void Modificar(){
-        
+        String ced_emp, nom_emp, ape_emp, rol_emp;
+        Integer sal_emp;
+        Conexion cn = new Conexion();
+        Connection cc = cn.conectar();
     }
     /**
      * This method is called from within the constructor to initialize the form.
