@@ -5,6 +5,7 @@
  */
 package proyecto;
 
+import java.sql.Connection;
 import javax.swing.JOptionPane;
 
 /**
@@ -88,6 +89,13 @@ public class RegistroEmpleado extends javax.swing.JFrame {
             Integer sal_emp;
             Conexion cn = new Conexion();
             Connection cc = cn.conectar();
+            ced_emp = jtxtCedula.getText();
+            nom_emp = jtxtNombre.getText();
+            ape_emp = jtxtApellido.getText();
+            sal_emp = Integer.valueOf(jtxtSalario.getText());
+            rol_emp = jcbxRol.getSelectedItem().toString();
+            String sql = "insert into empleado (ced_emp,nom_emp,ape_emp,sal_emp,rol_emp,ruta_emp) values"
+                    + "(?,?,?,?,?,'No asignado')";
         }
     }
     /**
