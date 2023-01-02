@@ -51,7 +51,8 @@ public class Empleados extends javax.swing.JFrame {
 
     public void Agregar() {
         if (jtxtNombre.getText().isEmpty()) {
-            
+            JOptionPane.showMessageDialog(this, "Ingrese el Nombre ");
+            jtxtNombre.requestFocus();
         }
     }
     
