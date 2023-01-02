@@ -11,11 +11,14 @@ package proyecto;
  */
 public class Empleados extends javax.swing.JFrame {
 
+    Integer fila;
     /**
      * Creates new form Empleados
      */
+    
     public Empleados() {
         initComponents();
+        
     }
 
     /**
