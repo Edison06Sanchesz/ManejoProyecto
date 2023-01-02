@@ -55,6 +55,7 @@ public class Empleados extends javax.swing.JFrame {
                 
                 modelo.addRow(registros);
             }
+            jtblPaquetes.setModel(modelo);
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(this, ex);
         }
