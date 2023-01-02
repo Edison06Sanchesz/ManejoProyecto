@@ -36,6 +36,9 @@ public class Registro extends javax.swing.JFrame {
                 PreparedStatement psd = cc.prepareStatement(sql);
                 psd.executeUpdate();
                 int n = psd.executeUpdate();
+                if () {
+                    
+                }
             } catch (SQLException ex) {
                 JOptionPane.showMessageDialog(null, "Datos incompletos");
             }
