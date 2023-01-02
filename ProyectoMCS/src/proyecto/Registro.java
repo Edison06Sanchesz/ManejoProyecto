@@ -8,6 +8,9 @@ package proyecto;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -24,12 +27,16 @@ public class Registro extends javax.swing.JFrame {
         if (jtxtUsuario.getText().equals("")) {
             
         }else{
-            Conexion cn = new Conexion();
-            Connection cc = cn.conectar();
-            String sql = "UPDATE LOGIN SET CON_USR='"+jtxtContrasena.getText() 
-                    + "'WHERE CED_USR='"+jtxtUsuario.getText()+"'";
-            PreparedStatement psd = cc.prepareStatement(sql);
-            psd.executeUpdate();
+            try {
+                Conexion cn = new Conexion();
+                Connection cc = cn.conectar();
+                String sql = "UPDATE LOGIN SET CON_USR='"+jtxtContrasena.getText()
+                        + "'WHERE CED_USR='"+jtxtUsuario.getText()+"'";
+                PreparedStatement psd = cc.prepareStatement(sql);
+                psd.executeUpdate();
+            } catch (SQLException ex) {
+                Logger.getLogger(Registro.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 
