@@ -40,7 +40,7 @@ public class Registro extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Datos guardados con éxito");
                     this.dispose();
                 }else{
-                    
+                    JOptionPane.showMessageDialog(null, "El usuario ingresado no existe");
                 }
             } catch (SQLException ex) {
                 JOptionPane.showMessageDialog(null, "Datos incompletos");
