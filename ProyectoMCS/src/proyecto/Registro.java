@@ -29,6 +29,7 @@ public class Registro extends javax.swing.JFrame {
             String sql = "UPDATE LOGIN SET CON_USR='"+jtxtContrasena.getText() 
                     + "'WHERE CED_USR='"+jtxtUsuario.getText()+"'";
             PreparedStatement psd = cc.prepareStatement(sql);
+            psd.executeUpdate();
         }
     }
 
