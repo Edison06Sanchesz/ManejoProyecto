@@ -5,7 +5,9 @@
  */
 package proyecto;
 
+import java.sql.Connection;
 import javax.swing.table.DefaultTableModel;
+import mds.conexion1;
 
 /**
  *
@@ -29,6 +31,8 @@ public class Empleados extends javax.swing.JFrame {
             String[] registros = new String[7];
             modelo = new DefaultTableModel(null, titulos);
             jtblPaquetes.setModel(modelo);
+            conexion1 cc = new conexion1();
+            Connection cn = cc.conectar();
     }
     /**
      * This method is called from within the constructor to initialize the form.
