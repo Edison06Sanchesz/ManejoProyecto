@@ -12,6 +12,7 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 import mds.conexion1;
 
@@ -28,7 +29,11 @@ public class Empleados extends javax.swing.JFrame {
     
     public Empleados() {
         initComponents();
-        
+        CargarTabla();
+        jtxtID.setEditable(false);
+        jtblPaquetes.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            
+        }
     }
 
     public void CargarTabla() {
