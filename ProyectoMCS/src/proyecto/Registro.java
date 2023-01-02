@@ -18,7 +18,9 @@ public class Registro extends javax.swing.JFrame {
     }
     
     public void Guardar(){
-        
+        if () {
+            
+        }
     }
 
     /** This method is called from within the constructor to
