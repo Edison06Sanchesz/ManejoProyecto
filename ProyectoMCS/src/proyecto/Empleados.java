@@ -54,7 +54,8 @@ public class Empleados extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Ingrese el Nombre ");
             jtxtNombre.requestFocus();
         }else if (jtxtApellido.getText().isEmpty()){
-            
+             JOptionPane.showMessageDialog(this, "Ingrese el Apellido ");
+            jtxtApellido.requestFocus();
         }
     }
     
