@@ -7,7 +7,11 @@ package proyecto;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import mds.conexion1;
 
@@ -28,7 +32,8 @@ public class Empleados extends javax.swing.JFrame {
     }
 
     public void CargarTabla() {
-        DefaultTableModel modelo = new DefaultTableModel();
+        try {
+            DefaultTableModel modelo = new DefaultTableModel();
             String titulos[] = {"CODIGO", "Nombre", "Apellido", "ARTICULO", "TIPO", "LOCAL","DESTINO"};
             String[] registros = new String[7];
             modelo = new DefaultTableModel(null, titulos);
@@ -39,6 +44,9 @@ public class Empleados extends javax.swing.JFrame {
             sql = "select * from paquetes ";
             Statement psd = cn.createStatement();
             ResultSet rs = psd.executeQuery(sql);
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, ex);
+        }
     }
     /**
      * This method is called from within the constructor to initialize the form.
