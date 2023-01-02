@@ -36,7 +36,14 @@ public class Empleados extends javax.swing.JFrame {
             @Override
             public void valueChanged(ListSelectionEvent lse) {
                if (jtblPaquetes.getSelectedRow() != -1) {
-                   
+                   fila = jtblPaquetes.getSelectedRow();
+                    jtxtID.setText(jtblPaquetes.getValueAt(fila, 0).toString());
+                    jtxtNombre.setText(jtblPaquetes.getValueAt(fila, 1).toString());
+                    jtxtApellido.setText(jtblPaquetes.getValueAt(fila, 2).toString());
+                    jtxtArticulo.setText(jtblPaquetes.getValueAt(fila, 3).toString());
+                    jcbxTipo.setSelectedItem(jtblPaquetes.getValueAt(fila, 4).toString());
+                    jcbxLocal.setSelectedItem(jtblPaquetes.getValueAt(fila, 5).toString());
+                    jcbxDestino.setSelectedItem(jtblPaquetes.getValueAt(fila, 6).toString());
                } 
             }
         });
@@ -95,9 +102,9 @@ public class Empleados extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        jcbxTipo = new javax.swing.JComboBox<>();
+        jcbxLocal = new javax.swing.JComboBox<>();
+        jcbxDestino = new javax.swing.JComboBox<>();
         jbtnGuardar = new javax.swing.JButton();
         jbtnModificar = new javax.swing.JButton();
         jbtnEliminar = new javax.swing.JButton();
@@ -139,11 +146,11 @@ public class Empleados extends javax.swing.JFrame {
 
         jLabel8.setText("Dirección del Destinatario");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TIPO", "LIVIANO", "PESADO", "FRAGIL", "ELECTRONICO" }));
+        jcbxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TIPO", "LIVIANO", "PESADO", "FRAGIL", "ELECTRONICO" }));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LOCAL", "Ambato", "Riobamba", "Quito", "Cuenca" }));
+        jcbxLocal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LOCAL", "Ambato", "Riobamba", "Quito", "Cuenca" }));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DESTINO", "Salida", "Ambato", "Riobamba", "Quito", "Cuenca" }));
+        jcbxDestino.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DESTINO", "Salida", "Ambato", "Riobamba", "Quito", "Cuenca" }));
 
         jbtnGuardar.setText("Guardar");
 
@@ -165,7 +172,7 @@ public class Empleados extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addGap(36, 36, 36)
-                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jcbxDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,7 +185,7 @@ public class Empleados extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jcbxTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(435, 435, 435))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,7 +206,7 @@ public class Empleados extends javax.swing.JFrame {
                                                 .addComponent(jbtnEliminar))))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(47, 47, 47)
-                                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(jcbxLocal, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(124, 124, 124)
@@ -230,11 +237,11 @@ public class Empleados extends javax.swing.JFrame {
                         .addGap(41, 41, 41)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jcbxTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(23, 23, 23)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jcbxLocal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(61, 61, 61)
                         .addComponent(jbtnGuardar)
@@ -247,7 +254,7 @@ public class Empleados extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jcbxDestino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(132, 132, 132))
@@ -300,9 +307,6 @@ public class Empleados extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -319,6 +323,9 @@ public class Empleados extends javax.swing.JFrame {
     private javax.swing.JButton jbtnGuardar;
     private javax.swing.JButton jbtnModificar;
     private javax.swing.JButton jbtnSalir;
+    private javax.swing.JComboBox<String> jcbxDestino;
+    private javax.swing.JComboBox<String> jcbxLocal;
+    private javax.swing.JComboBox<String> jcbxTipo;
     private javax.swing.JTable jtblPaquetes;
     private javax.swing.JTextField jtxtApellido;
     private javax.swing.JTextField jtxtArticulo;
