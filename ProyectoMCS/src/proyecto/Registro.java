@@ -18,7 +18,7 @@ public class Registro extends javax.swing.JFrame {
     }
     
     public void Guardar(){
-        if () {
+        if (jtxtUsuario.getText().equals("")) {
             
         }
     }
