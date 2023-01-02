@@ -35,7 +35,9 @@ public class Empleados extends javax.swing.JFrame {
         jtblPaquetes.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent lse) {
-                
+               if (jtblPaquetes.getSelectedRow() != -1) {
+                   
+               } 
             }
         });
     }
