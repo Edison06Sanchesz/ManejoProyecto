@@ -17,6 +17,11 @@ public class EmpleadosPaquetes extends javax.swing.JFrame {
     public EmpleadosPaquetes(String cedula) {
         initComponents();
     }
+    
+    public void entregarPaquetes(){
+        
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
