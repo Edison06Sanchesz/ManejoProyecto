@@ -49,6 +49,10 @@ public class Empleados extends javax.swing.JFrame {
         });
     }
 
+    public void Agregar() {
+        
+    }
+    
     public void CargarTabla() {
         try {
             DefaultTableModel modelo = new DefaultTableModel();
