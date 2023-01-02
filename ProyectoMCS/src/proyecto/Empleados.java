@@ -50,7 +50,9 @@ public class Empleados extends javax.swing.JFrame {
     }
 
     public void Agregar() {
-        
+        if (jtxtNombre.getText().isEmpty()) {
+            
+        }
     }
     
     public void CargarTabla() {
