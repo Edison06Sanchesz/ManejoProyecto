@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -35,7 +36,7 @@ public class Registro extends javax.swing.JFrame {
                 PreparedStatement psd = cc.prepareStatement(sql);
                 psd.executeUpdate();
             } catch (SQLException ex) {
-                Logger.getLogger(Registro.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null, "Datos incompletos");
             }
         }
     }
