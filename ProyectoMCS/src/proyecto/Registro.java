@@ -73,6 +73,11 @@ public class Registro extends javax.swing.JFrame {
         jLabel3.setText("Contraseña");
 
         jtbnGuardar.setText("Guardar");
+        jtbnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtbnGuardarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -117,6 +122,10 @@ public class Registro extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jtbnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtbnGuardarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtbnGuardarActionPerformed
 
     /**
      * @param args the command line arguments
