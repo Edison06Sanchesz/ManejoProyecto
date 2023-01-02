@@ -19,9 +19,8 @@ public class EmpleadosPaquetes extends javax.swing.JFrame {
         initComponents();
     }
     
-    
     public void entregarPaquetes(){
-        
+        Conexion cc = new Conexion();
     }
     
 
