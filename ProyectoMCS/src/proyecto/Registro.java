@@ -25,6 +25,8 @@ public class Registro extends javax.swing.JFrame {
         }else{
             Conexion cn = new Conexion();
             Connection cc = cn.conectar();
+            String sql = "UPDATE LOGIN SET CON_USR='"+jtxtContrasena.getText() 
+                    + "'WHERE CED_USR='"+jtxtUsuario.getText()+"'";
         }
     }
 
