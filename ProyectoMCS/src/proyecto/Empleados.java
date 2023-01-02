@@ -26,7 +26,8 @@ public class Empleados extends javax.swing.JFrame {
     public void CargarTabla() {
         DefaultTableModel modelo = new DefaultTableModel();
             String titulos[] = {"CODIGO", "Nombre", "Apellido", "ARTICULO", "TIPO", "LOCAL","DESTINO"};
-            
+            String[] registros = new String[7];
+            modelo = new DefaultTableModel(null, titulos);
     }
     /**
      * This method is called from within the constructor to initialize the form.
