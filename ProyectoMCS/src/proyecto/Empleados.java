@@ -44,6 +44,9 @@ public class Empleados extends javax.swing.JFrame {
             sql = "select * from paquetes ";
             Statement psd = cn.createStatement();
             ResultSet rs = psd.executeQuery(sql);
+            while (rs.next()) {
+                
+            }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(this, ex);
         }
