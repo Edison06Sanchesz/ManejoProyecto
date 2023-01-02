@@ -7,6 +7,7 @@
 package proyecto;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 
 /**
  *
@@ -27,6 +28,7 @@ public class Registro extends javax.swing.JFrame {
             Connection cc = cn.conectar();
             String sql = "UPDATE LOGIN SET CON_USR='"+jtxtContrasena.getText() 
                     + "'WHERE CED_USR='"+jtxtUsuario.getText()+"'";
+            PreparedStatement psd = cc.prepareStatement(sql);
         }
     }
 
