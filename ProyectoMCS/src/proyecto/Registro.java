@@ -38,6 +38,7 @@ public class Registro extends javax.swing.JFrame {
                 int n = psd.executeUpdate();
                 if (n>0) {
                     JOptionPane.showMessageDialog(null, "Datos guardados con éxito");
+                    this.dispose();
                 }
             } catch (SQLException ex) {
                 JOptionPane.showMessageDialog(null, "Datos incompletos");
