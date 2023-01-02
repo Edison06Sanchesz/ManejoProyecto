@@ -6,6 +6,8 @@
 
 package proyecto;
 
+import java.sql.Connection;
+
 /**
  *
  * @author HP
@@ -22,6 +24,7 @@ public class Registro extends javax.swing.JFrame {
             
         }else{
             Conexion cn = new Conexion();
+            Connection cc = cn.conectar();
         }
     }
 
