@@ -21,7 +21,7 @@ public class Registro extends javax.swing.JFrame {
         if (jtxtUsuario.getText().equals("")) {
             
         }else{
-            
+            Conexion cn = new Conexion();
         }
     }
 
