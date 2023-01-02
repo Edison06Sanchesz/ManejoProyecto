@@ -125,6 +125,7 @@ public class Registro extends javax.swing.JFrame {
 
     private void jtbnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtbnGuardarActionPerformed
         // TODO add your handling code here:
+        Guardar();
     }//GEN-LAST:event_jtbnGuardarActionPerformed
 
     /**
