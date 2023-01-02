@@ -36,7 +36,7 @@ public class Registro extends javax.swing.JFrame {
                 PreparedStatement psd = cc.prepareStatement(sql);
                 psd.executeUpdate();
                 int n = psd.executeUpdate();
-                if () {
+                if (n>0) {
                     
                 }
             } catch (SQLException ex) {
