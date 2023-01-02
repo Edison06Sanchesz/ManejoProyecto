@@ -6,6 +6,8 @@
 package proyecto;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.swing.table.DefaultTableModel;
 import mds.conexion1;
 
@@ -33,6 +35,10 @@ public class Empleados extends javax.swing.JFrame {
             jtblPaquetes.setModel(modelo);
             conexion1 cc = new conexion1();
             Connection cn = cc.conectar();
+            String sql = "";
+            sql = "select * from paquetes ";
+            Statement psd = cn.createStatement();
+            ResultSet rs = psd.executeQuery(sql);
     }
     /**
      * This method is called from within the constructor to initialize the form.
