@@ -45,7 +45,15 @@ public class Empleados extends javax.swing.JFrame {
             Statement psd = cn.createStatement();
             ResultSet rs = psd.executeQuery(sql);
             while (rs.next()) {
+                registros[0] = rs.getString("id_paq");
+                registros[1] = rs.getString("nom_des_paq");
+                registros[2] = rs.getString("ape_des_paq");
+                registros[3] = rs.getString("art_paq");
+                registros[4] = rs.getString("tipo_paq");
+                registros[5] = rs.getString("dir_paq");
+                registros[6] = rs.getString("dir_lleg_paq");
                 
+                modelo.addRow(registros);
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(this, ex);
