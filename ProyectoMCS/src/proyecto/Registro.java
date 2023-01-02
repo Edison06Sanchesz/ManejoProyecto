@@ -35,6 +35,7 @@ public class Registro extends javax.swing.JFrame {
                         + "'WHERE CED_USR='"+jtxtUsuario.getText()+"'";
                 PreparedStatement psd = cc.prepareStatement(sql);
                 psd.executeUpdate();
+                int n = psd.executeUpdate();
             } catch (SQLException ex) {
                 JOptionPane.showMessageDialog(null, "Datos incompletos");
             }
