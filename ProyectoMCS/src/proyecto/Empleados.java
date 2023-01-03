@@ -123,6 +123,10 @@ public class Empleados extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, ex);
         }
     }
+    
+    public void eliminarPaquete() {
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
