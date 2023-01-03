@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -35,7 +36,8 @@ public class EmpleadosPaquetes extends javax.swing.JFrame {
             psd2.executeUpdate();
             int n2=psd2.executeUpdate();
             if (n2>0) {
-                
+                JOptionPane.showMessageDialog(null, "Paquete entregado");
+            
             }
             
         } catch (SQLException ex) {
