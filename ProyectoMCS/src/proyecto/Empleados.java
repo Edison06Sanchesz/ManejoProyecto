@@ -129,6 +129,9 @@ public class Empleados extends javax.swing.JFrame {
             conexion1 cc = new conexion1();
             Connection cn = cc.conectar();
             id_paq = jtxtID.getText();
+            if (JOptionPane.showConfirmDialog(rootPane, "Desea Eliminar ") == 0) {
+                
+            }
     }
 
     /**
