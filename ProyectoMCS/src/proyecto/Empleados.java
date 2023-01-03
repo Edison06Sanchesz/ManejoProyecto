@@ -134,8 +134,10 @@ public class Empleados extends javax.swing.JFrame {
                 java.sql.PreparedStatement psd = cn.prepareStatement(sql);
                 int n = psd.executeUpdate();
                 if (n > 0) {
-                    
+                    JOptionPane.showMessageDialog(this, "Eliminado satisfactoriamente");
+                    CargarTabla();
                 }
+                
             }
     }
 
