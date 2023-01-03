@@ -130,7 +130,9 @@ public class Empleados extends javax.swing.JFrame {
             Connection cn = cc.conectar();
             id_paq = jtxtID.getText();
             if (JOptionPane.showConfirmDialog(rootPane, "Desea Eliminar ") == 0) {
-                
+                String sql = "DELETE FROM paquetes where id_paq='" + id_paq + "'";
+                java.sql.PreparedStatement psd = cn.prepareStatement(sql);
+                int n = psd.executeUpdate();
             }
     }
 
