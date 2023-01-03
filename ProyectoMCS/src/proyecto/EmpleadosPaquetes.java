@@ -88,6 +88,11 @@ public class EmpleadosPaquetes extends javax.swing.JFrame {
         jbtnReportePaquetes.setText("Reporte de Paquetes");
 
         jbtnEntregaPaquetes.setText("Entregar Paquete");
+        jbtnEntregaPaquetes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnEntregaPaquetesActionPerformed(evt);
+            }
+        });
 
         jbtnSalir.setText("Salir");
 
@@ -147,6 +152,10 @@ public class EmpleadosPaquetes extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jbtnEntregaPaquetesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnEntregaPaquetesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtnEntregaPaquetesActionPerformed
 
     /**
      * @param args the command line arguments
