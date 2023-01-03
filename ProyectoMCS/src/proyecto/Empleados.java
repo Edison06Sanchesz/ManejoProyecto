@@ -24,10 +24,11 @@ import mds.conexion1;
 public class Empleados extends javax.swing.JFrame {
 
     Integer fila;
+
     /**
      * Creates new form Empleados
      */
-    
+
     public Empleados() {
         initComponents();
         CargarTabla();
@@ -35,8 +36,8 @@ public class Empleados extends javax.swing.JFrame {
         jtblPaquetes.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent lse) {
-               if (jtblPaquetes.getSelectedRow() != -1) {
-                   fila = jtblPaquetes.getSelectedRow();
+                if (jtblPaquetes.getSelectedRow() != -1) {
+                    fila = jtblPaquetes.getSelectedRow();
                     jtxtID.setText(jtblPaquetes.getValueAt(fila, 0).toString());
                     jtxtNombre.setText(jtblPaquetes.getValueAt(fila, 1).toString());
                     jtxtApellido.setText(jtblPaquetes.getValueAt(fila, 2).toString());
@@ -44,7 +45,7 @@ public class Empleados extends javax.swing.JFrame {
                     jcbxTipo.setSelectedItem(jtblPaquetes.getValueAt(fila, 4).toString());
                     jcbxLocal.setSelectedItem(jtblPaquetes.getValueAt(fila, 5).toString());
                     jcbxDestino.setSelectedItem(jtblPaquetes.getValueAt(fila, 6).toString());
-               } 
+                }
             }
         });
     }
@@ -53,28 +54,31 @@ public class Empleados extends javax.swing.JFrame {
         if (jtxtNombre.getText().isEmpty()) {
             JOptionPane.showMessageDialog(this, "Ingrese el Nombre ");
             jtxtNombre.requestFocus();
-        }else if (jtxtApellido.getText().isEmpty()){
-             JOptionPane.showMessageDialog(this, "Ingrese el Apellido ");
+        } else if (jtxtApellido.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Ingrese el Apellido ");
             jtxtApellido.requestFocus();
-        }else if (jtxtArticulo.getText().isEmpty()) {
-             JOptionPane.showMessageDialog(this, "Ingrese un Articulo ");
+        } else if (jtxtArticulo.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Ingrese un Articulo ");
             jtxtArticulo.requestFocus();
         } else if (jcbxLocal.getSelectedItem().equals("")) {
             JOptionPane.showMessageDialog(this, "Ingrese una Direccion ");
             jcbxLocal.requestFocus();
-        }else if (jcbxDestino.getSelectedItem().equals("")) {
+        } else if (jcbxDestino.getSelectedItem().equals("")) {
             JOptionPane.showMessageDialog(this, "Ingrese una Direccion ");
             jcbxDestino.requestFocus();
-        }else if (jcbxTipo.getSelectedItem().toString().equals("tipo")){
+        } else if (jcbxTipo.getSelectedItem().toString().equals("tipo")) {
             JOptionPane.showMessageDialog(this, "Ingrese el Tipo");
             jcbxTipo.requestFocus();
         }
+
+        conexion1 cc = new conexion1();
+        Connection cn = cc.conectar();
     }
-    
+
     public void CargarTabla() {
         try {
             DefaultTableModel modelo = new DefaultTableModel();
-            String titulos[] = {"CODIGO", "Nombre", "Apellido", "ARTICULO", "TIPO", "LOCAL","DESTINO"};
+            String titulos[] = {"CODIGO", "Nombre", "Apellido", "ARTICULO", "TIPO", "LOCAL", "DESTINO"};
             String[] registros = new String[7];
             modelo = new DefaultTableModel(null, titulos);
             jtblPaquetes.setModel(modelo);
@@ -92,7 +96,7 @@ public class Empleados extends javax.swing.JFrame {
                 registros[4] = rs.getString("tipo_paq");
                 registros[5] = rs.getString("dir_paq");
                 registros[6] = rs.getString("dir_lleg_paq");
-                
+
                 modelo.addRow(registros);
             }
             jtblPaquetes.setModel(modelo);
@@ -100,6 +104,7 @@ public class Empleados extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, ex);
         }
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
