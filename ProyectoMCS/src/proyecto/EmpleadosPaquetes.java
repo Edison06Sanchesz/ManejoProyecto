@@ -38,6 +38,8 @@ public class EmpleadosPaquetes extends javax.swing.JFrame {
             if (n2>0) {
                 JOptionPane.showMessageDialog(null, "Paquete entregado");
             
+            }else{
+                JOptionPane.showMessageDialog(null, "Error");
             }
             
         } catch (SQLException ex) {
