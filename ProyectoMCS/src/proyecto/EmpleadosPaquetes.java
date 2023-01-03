@@ -33,6 +33,9 @@ public class EmpleadosPaquetes extends javax.swing.JFrame {
                     +jtxtIDPaquete.getText()+"'";
             PreparedStatement psd2 = cn.prepareStatement(sql2);
             psd2.executeUpdate();
+            if (n2>0) {
+                
+            }
             int n2=psd2.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(EmpleadosPaquetes.class.getName()).log(Level.SEVERE, null, ex);
