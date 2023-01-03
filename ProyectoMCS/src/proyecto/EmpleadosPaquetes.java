@@ -24,6 +24,9 @@ public class EmpleadosPaquetes extends javax.swing.JFrame {
     public void entregarPaquetes(){
         Conexion cc = new Conexion();
         Connection cn = cc.conectar();
+        String sql2 = "UPDATE PAQUETES SET EST_PAQ = 'ENTREGADO' WHERE ID_PAQ='" 
+                +jtxtIDPaquete.getText()+"'";
+        
     }
     
 
