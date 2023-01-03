@@ -7,6 +7,9 @@ package proyecto;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -23,12 +26,16 @@ public class EmpleadosPaquetes extends javax.swing.JFrame {
     }
     
     public void entregarPaquetes(){
-        Conexion cc = new Conexion();
-        Connection cn = cc.conectar();
-        String sql2 = "UPDATE PAQUETES SET EST_PAQ = 'ENTREGADO' WHERE ID_PAQ='" 
-                +jtxtIDPaquete.getText()+"'";
-        PreparedStatement psd2 = cn.prepareStatement(sql2);
-        psd2.executeUpdate();
+        try {
+            Conexion cc = new Conexion();
+            Connection cn = cc.conectar();
+            String sql2 = "UPDATE PAQUETES SET EST_PAQ = 'ENTREGADO' WHERE ID_PAQ='"
+                    +jtxtIDPaquete.getText()+"'";
+            PreparedStatement psd2 = cn.prepareStatement(sql2);
+            psd2.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(EmpleadosPaquetes.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         
         
