@@ -63,7 +63,8 @@ public class Empleados extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Ingrese una Direccion ");
             jcbxLocal.requestFocus();
         }else if (jcbxDestino.getSelectedItem().equals("")) {
-            
+            JOptionPane.showMessageDialog(this, "Ingrese una Direccion ");
+            jcbxDestino.requestFocus();
         }
     }
     
