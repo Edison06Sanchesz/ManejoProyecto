@@ -137,7 +137,7 @@ public class Empleados extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, "Eliminado satisfactoriamente");
                     CargarTabla();
                 }else {
-                    
+                    System.out.println("No se ha eliminado");
                 }
                 
             }
