@@ -5,6 +5,8 @@
  */
 package proyecto;
 
+import java.sql.Connection;
+
 /**
  *
  * @author HP
@@ -21,6 +23,7 @@ public class EmpleadosPaquetes extends javax.swing.JFrame {
     
     public void entregarPaquetes(){
         Conexion cc = new Conexion();
+        Connection cn = cc.conectar();
     }
     
 
