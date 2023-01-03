@@ -28,7 +28,11 @@ public class EmpleadosPaquetes extends javax.swing.JFrame {
         String sql2 = "UPDATE PAQUETES SET EST_PAQ = 'ENTREGADO' WHERE ID_PAQ='" 
                 +jtxtIDPaquete.getText()+"'";
         PreparedStatement psd2 = cn.prepareStatement(sql2);
-            
+        psd2.executeUpdate();
+        
+        
+        
+        
     }
     
 
