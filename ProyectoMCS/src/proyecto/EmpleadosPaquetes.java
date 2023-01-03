@@ -155,6 +155,7 @@ public class EmpleadosPaquetes extends javax.swing.JFrame {
 
     private void jbtnEntregaPaquetesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnEntregaPaquetesActionPerformed
         // TODO add your handling code here:
+        entregarPaquetes();
     }//GEN-LAST:event_jbtnEntregaPaquetesActionPerformed
 
     /**
