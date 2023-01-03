@@ -6,6 +6,7 @@
 package proyecto;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 
 /**
  *
@@ -26,7 +27,8 @@ public class EmpleadosPaquetes extends javax.swing.JFrame {
         Connection cn = cc.conectar();
         String sql2 = "UPDATE PAQUETES SET EST_PAQ = 'ENTREGADO' WHERE ID_PAQ='" 
                 +jtxtIDPaquete.getText()+"'";
-        
+        PreparedStatement psd2 = cn.prepareStatement(sql2);
+            
     }
     
 
