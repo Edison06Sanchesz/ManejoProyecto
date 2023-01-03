@@ -84,6 +84,11 @@ public class Empleados extends javax.swing.JFrame {
             psd.setString(4, jcbxTipo.getSelectedItem().toString());
             psd.setString(5,jcbxLocal.getSelectedItem().toString());
             psd.setString(6, jcbxDestino.getSelectedItem().toString());
+            int n = psd.executeUpdate();
+            if (n > 0) {
+                JOptionPane.showMessageDialog(this, "Se inserto Correctamente");
+                CargarTabla();
+            }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(this, "No se realizo la transaccion, error !!");;
         }
