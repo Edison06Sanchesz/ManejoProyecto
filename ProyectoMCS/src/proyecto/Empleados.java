@@ -73,6 +73,9 @@ public class Empleados extends javax.swing.JFrame {
 
         conexion1 cc = new conexion1();
         Connection cn = cc.conectar();
+        
+        String sql = "insert into paquetes (nom_des_paq,ape_des_paq,art_paq,tipo_paq,dir_paq,dir_lleg_paq,est_paq,asig_paq) values (?,?,?,?,?,?,'No Entregado',0)";
+            java.sql.PreparedStatement psd = cn.prepareStatement(sql);
     }
 
     public void CargarTabla() {
