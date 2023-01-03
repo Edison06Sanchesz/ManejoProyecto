@@ -125,7 +125,10 @@ public class Empleados extends javax.swing.JFrame {
     }
     
     public void eliminarPaquete() {
-        
+        String id_paq;
+            conexion1 cc = new conexion1();
+            Connection cn = cc.conectar();
+            id_paq = jtxtID.getText();
     }
 
     /**
