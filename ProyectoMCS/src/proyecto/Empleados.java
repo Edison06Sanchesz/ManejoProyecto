@@ -51,30 +51,31 @@ public class Empleados extends javax.swing.JFrame {
     }
 
     public void Agregar() {
-        if (jtxtNombre.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Ingrese el Nombre ");
-            jtxtNombre.requestFocus();
-        } else if (jtxtApellido.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Ingrese el Apellido ");
-            jtxtApellido.requestFocus();
-        } else if (jtxtArticulo.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Ingrese un Articulo ");
-            jtxtArticulo.requestFocus();
-        } else if (jcbxLocal.getSelectedItem().equals("")) {
-            JOptionPane.showMessageDialog(this, "Ingrese una Direccion ");
-            jcbxLocal.requestFocus();
-        } else if (jcbxDestino.getSelectedItem().equals("")) {
-            JOptionPane.showMessageDialog(this, "Ingrese una Direccion ");
-            jcbxDestino.requestFocus();
-        } else if (jcbxTipo.getSelectedItem().toString().equals("tipo")) {
-            JOptionPane.showMessageDialog(this, "Ingrese el Tipo");
-            jcbxTipo.requestFocus();
-        }
-
-        conexion1 cc = new conexion1();
-        Connection cn = cc.conectar();
-        
-        String sql = "insert into paquetes (nom_des_paq,ape_des_paq,art_paq,tipo_paq,dir_paq,dir_lleg_paq,est_paq,asig_paq) values (?,?,?,?,?,?,'No Entregado',0)";
+        try {
+            if (jtxtNombre.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Ingrese el Nombre ");
+                jtxtNombre.requestFocus();
+            } else if (jtxtApellido.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Ingrese el Apellido ");
+                jtxtApellido.requestFocus();
+            } else if (jtxtArticulo.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Ingrese un Articulo ");
+                jtxtArticulo.requestFocus();
+            } else if (jcbxLocal.getSelectedItem().equals("")) {
+                JOptionPane.showMessageDialog(this, "Ingrese una Direccion ");
+                jcbxLocal.requestFocus();
+            } else if (jcbxDestino.getSelectedItem().equals("")) {
+                JOptionPane.showMessageDialog(this, "Ingrese una Direccion ");
+                jcbxDestino.requestFocus();
+            } else if (jcbxTipo.getSelectedItem().toString().equals("tipo")) {
+                JOptionPane.showMessageDialog(this, "Ingrese el Tipo");
+                jcbxTipo.requestFocus();
+            }
+            
+            conexion1 cc = new conexion1();
+            Connection cn = cc.conectar();
+            
+            String sql = "insert into paquetes (nom_des_paq,ape_des_paq,art_paq,tipo_paq,dir_paq,dir_lleg_paq,est_paq,asig_paq) values (?,?,?,?,?,?,'No Entregado',0)";
             java.sql.PreparedStatement psd = cn.prepareStatement(sql);
         
             psd.setString(1, jtxtNombre.getText());
@@ -83,6 +84,9 @@ public class Empleados extends javax.swing.JFrame {
             psd.setString(4, jcbxTipo.getSelectedItem().toString());
             psd.setString(5,jcbxLocal.getSelectedItem().toString());
             psd.setString(6, jcbxDestino.getSelectedItem().toString());
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "No se realizo la transaccion, error !!");;
+        }
     }
 
     public void CargarTabla() {
