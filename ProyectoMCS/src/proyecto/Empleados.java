@@ -76,6 +76,13 @@ public class Empleados extends javax.swing.JFrame {
         
         String sql = "insert into paquetes (nom_des_paq,ape_des_paq,art_paq,tipo_paq,dir_paq,dir_lleg_paq,est_paq,asig_paq) values (?,?,?,?,?,?,'No Entregado',0)";
             java.sql.PreparedStatement psd = cn.prepareStatement(sql);
+        
+            psd.setString(1, jtxtNombre.getText());
+            psd.setString(2, jtxtApellido.getText());
+            psd.setString(3, jtxtArticulo.getText());
+            psd.setString(4, jcbxTipo.getSelectedItem().toString());
+            psd.setString(5,jcbxLocal.getSelectedItem().toString());
+            psd.setString(6, jcbxDestino.getSelectedItem().toString());
     }
 
     public void CargarTabla() {
