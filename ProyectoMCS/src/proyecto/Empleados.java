@@ -133,6 +133,9 @@ public class Empleados extends javax.swing.JFrame {
                 String sql = "DELETE FROM paquetes where id_paq='" + id_paq + "'";
                 java.sql.PreparedStatement psd = cn.prepareStatement(sql);
                 int n = psd.executeUpdate();
+                if (n > 0) {
+                    
+                }
             }
     }
 
