@@ -125,6 +125,7 @@ public class Empleados extends javax.swing.JFrame {
     }
     
     public void eliminarPaquete() {
+        try{
         String id_paq;
             conexion1 cc = new conexion1();
             Connection cn = cc.conectar();
@@ -141,6 +142,9 @@ public class Empleados extends javax.swing.JFrame {
                 }
                 
             }
+         } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
     }
 
     /**
