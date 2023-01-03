@@ -59,6 +59,8 @@ public class Empleados extends javax.swing.JFrame {
         }else if (jtxtArticulo.getText().isEmpty()) {
              JOptionPane.showMessageDialog(this, "Ingrese un Articulo ");
             jtxtArticulo.requestFocus();
+        } else if (jcbxLocal.getSelectedItem().equals("")) {
+            
         }
     }
     
