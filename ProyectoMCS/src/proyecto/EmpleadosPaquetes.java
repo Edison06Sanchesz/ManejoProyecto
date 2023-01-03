@@ -174,6 +174,7 @@ public class EmpleadosPaquetes extends javax.swing.JFrame {
 
     private void jbtnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSalirActionPerformed
         // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_jbtnSalirActionPerformed
 
     /**
