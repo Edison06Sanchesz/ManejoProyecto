@@ -30,6 +30,17 @@ public class AsignarPaquetes extends javax.swing.JFrame {
             }
         });
         
+        Integer fila1 = jtblPaquetes.getSelectedRow();
+        jtblPaquetes.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent lse) {
+                if (jtblPaquetes.getSelectedRow() != -1) {
+                    int fila = jtblPaquetes.getSelectedRow();
+                    jtxtPaquete.setText(jtblPaquetes.getValueAt(fila, 0).toString());
+                }
+            }
+        });
+        
     }
 
     /**
