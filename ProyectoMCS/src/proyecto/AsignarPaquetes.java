@@ -5,6 +5,9 @@
  */
 package proyecto;
 
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+
 /**
  *
  * @author HP
@@ -16,6 +19,16 @@ public class AsignarPaquetes extends javax.swing.JFrame {
      */
     public AsignarPaquetes() {
         initComponents();
+        Integer fila = jtblRepartidores.getSelectedRow();
+        jtblRepartidores.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent lse) {
+                if (jtblRepartidores.getSelectedRow() != -1) {
+                    int fila = jtblRepartidores.getSelectedRow();
+                    jtxtCedula.setText(jtblRepartidores.getValueAt(fila, 0).toString());
+                }
+            }
+        });
         
     }
 
