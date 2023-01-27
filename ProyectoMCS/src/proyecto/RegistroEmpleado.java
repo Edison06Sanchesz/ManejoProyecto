@@ -7,10 +7,13 @@ package proyecto;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -67,11 +70,46 @@ public class RegistroEmpleado extends javax.swing.JFrame {
         jbtnEliminar.setEnabled(false);
         jbtnCancelar.setEnabled(true);
     }
+    
+    public void desbloquearBotonesModificar(){
+        jbtnNuevo.setEnabled(false);
+        jbtnGuardar.setEnabled(false);
+        jbtnModificar.setEnabled(true);
+        jbtnEliminar.setEnabled(true);
+        jbtnCancelar.setEnabled(true);
+    }
+    
     public void Nuevo(){
         this.debloquearTextos();
         this.desbloquearBotones();
         this.limpiarTexto();
     }
+    public void cargarTabla(){
+        try {
+            DefaultTableModel modelo = new DefaultTableModel();
+            String titulos[] = {"CEDULA","NOMBRE","APELLIDO","SALARIO","ROL"};
+            String registros[] = new String[5];
+            modelo = new DefaultTableModel(null,titulos);
+            jtblEmpleados.setModel(modelo);
+            Conexion cn = new Conexion();
+            Connection cc = cn.conectar();
+            String sql= "select * form empleados";
+            Statement psd = cc.createStatement();
+            ResultSet rs = psd.executeQuery(sql);
+            while(rs.next()){
+                registros[0] = rs.getString("ced_emp");
+                registros[0] = rs.getString("nom_emp");
+                registros[0] = rs.getString("ape_emp");
+                registros[0] = rs.getString("sal_emp");
+                registros[0] = rs.getString("rol_emp");
+                modelo.addRow(registros);
+            }
+            jtblEmpleados.setModel(modelo);
+        } catch (SQLException ex) {
+            Logger.getLogger(RegistroEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     public void Guardar(){
         if(jtxtCedula.getText().isEmpty()){
             JOptionPane.showMessageDialog(null, "Ingrese el N. de cedula");
@@ -134,7 +172,11 @@ public class RegistroEmpleado extends javax.swing.JFrame {
                     + "',rol_emp='" + rol_emp + "'Where ced_emp='" + ced_emp + "'";
             PreparedStatement psd = cc.prepareStatement(sql);
             psd.executeUpdate();
-            
+            int n= psd.executeUpdate();
+            if (n >0){
+                JOptionPane.showMessageDialog(null, "Se actualizo correctamente");
+                cargarTabla();
+            }
                     } catch (SQLException ex) {
             Logger.getLogger(RegistroEmpleado.class.getName()).log(Level.SEVERE, null, ex);
         }
