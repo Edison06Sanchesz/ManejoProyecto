@@ -13,6 +13,8 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -24,8 +26,28 @@ public class RegistroEmpleado extends javax.swing.JFrame {
     /**
      * Creates new form RegistroEmpleado
      */
+    Integer fila;
     public RegistroEmpleado() {
         initComponents();
+        this.bloquearTextos();
+        this.bloquearBotones();
+        this.cargarTabla();
+        fila = jtblEmpleados.getSelectedRow();
+        jtblEmpleados.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                if (jtblEmpleados.getSelectedRow() != -1) {
+                    int fila = jtblEmpleados.getSelectedRow();
+                    jtxtCedula.setText(jtblEmpleados.getValueAt(fila, 0).toString());
+                    jtxtNombre.setText(jtblEmpleados.getValueAt(fila, 1).toString());
+                    jtxtApellido.setText(jtblEmpleados.getValueAt(fila, 2).toString());
+                    jtxtSalario.setText(jtblEmpleados.getValueAt(fila, 3).toString());
+                    jcbxRol.setSelectedItem(jtblEmpleados.getValueAt(fila, 4).toString());
+                    desbloquearBotonesModificar();
+                    desbloquearTextos();
+                }
+            }
+        });
     }
     public void Cancelar(){
         this.limpiarTexto();
@@ -56,11 +78,12 @@ public class RegistroEmpleado extends javax.swing.JFrame {
         jbtnCancelar.setEnabled(false);
     }
     
-    public void debloquearTextos(){
+    public void desbloquearTextos(){
         jtxtCedula.setEditable(true);
         jtxtNombre.setEditable(true);
         jtxtApellido.setEditable(true);
         jtxtSalario.setEditable(true);
+        jcbxRol.setEnabled(true);
     }
     
     public void desbloquearBotones(){
@@ -80,7 +103,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
     }
     
     public void Nuevo(){
-        this.debloquearTextos();
+        this.desbloquearTextos();
         this.desbloquearBotones();
         this.limpiarTexto();
     }
@@ -93,7 +116,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
             jtblEmpleados.setModel(modelo);
             Conexion cn = new Conexion();
             Connection cc = cn.conectar();
-            String sql= "select * form empleados";
+            String sql= "select * from empleados";
             Statement psd = cc.createStatement();
             ResultSet rs = psd.executeQuery(sql);
             while(rs.next()){
@@ -137,7 +160,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
                 ape_emp = jtxtApellido.getText();
                 sal_emp = Integer.valueOf(jtxtSalario.getText());
                 rol_emp = jcbxRol.getSelectedItem().toString();
-                String sql = "insert into empleado (ced_emp,nom_emp,ape_emp,sal_emp,rol_emp,ruta_emp) values"
+                String sql = "insert into empleados (ced_emp,nom_emp,ape_emp,sal_emp,rol_emp,ruta_emp) values"
                         + "(?,?,?,?,?,'No asignado')";
                 PreparedStatement psd = cc.prepareStatement(sql);
                 psd.setString(1, ced_emp);
@@ -179,6 +202,27 @@ public class RegistroEmpleado extends javax.swing.JFrame {
             }
                     } catch (SQLException ex) {
             Logger.getLogger(RegistroEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public void Eliminar() {
+        try {
+            String ced_emp;
+            mds.Conexion cn = new mds.Conexion();
+            Connection cc = cn.conectar();
+            ced_emp = jtxtCedula.getText();
+            String sql = "delete from empleados where ced_emp= '" + ced_emp + "'";
+            PreparedStatement psd = cc.prepareStatement(sql);
+            psd.executeUpdate();
+            int n = psd.executeUpdate();
+            if (n > 0) {
+                JOptionPane.showMessageDialog(null, "Se borro correctamente");
+                this.cargarTabla();
+                this.bloquearBotones();
+                this.limpiarTexto();
+
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "No se puede borrar");
         }
     }
     /**
@@ -387,11 +431,13 @@ public class RegistroEmpleado extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtnCancelarActionPerformed
 
     private void jbtnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnModificarActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:\
+        Modificar();
     }//GEN-LAST:event_jbtnModificarActionPerformed
 
     private void jbtnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnEliminarActionPerformed
         // TODO add your handling code here:
+        Eliminar();
     }//GEN-LAST:event_jbtnEliminarActionPerformed
 
     /**
