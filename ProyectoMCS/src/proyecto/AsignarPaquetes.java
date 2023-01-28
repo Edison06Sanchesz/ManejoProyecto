@@ -7,12 +7,15 @@ package proyecto;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -89,6 +92,32 @@ public class AsignarPaquetes extends javax.swing.JFrame {
         
     }
     
+    
+    public void cargarTablaRepartidores() {
+        try {
+            DefaultTableModel modelo = new DefaultTableModel();
+            String titulos[] = {"CEDULA", "NOMBRE", "APELLIDO", "CARGO", "RUTA"};
+            String registros[] = new String[5];
+            modelo = new DefaultTableModel(null, titulos);
+            jtblRepartidores.setModel(modelo);
+            mds.Conexion cn = new mds.Conexion();
+            Connection cc = cn.conectar();
+            String sql = "select * from empleados where rol_emp = 'Repartidor'";
+            Statement psd = cc.createStatement();
+            ResultSet rs = psd.executeQuery(sql);
+            while (rs.next()) {
+                registros[0] = rs.getString("ced_emp");
+                registros[1] = rs.getString("nom_emp");
+                registros[2] = rs.getString("ape_emp");
+                registros[3] = rs.getString("rol_emp");
+                registros[4] = rs.getString("ruta_emp");
+                modelo.addRow(registros);
+            }
+            jtblRepartidores.setModel(modelo);
+        } catch (SQLException ex) {
+            Logger.getLogger(mds.Datos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
