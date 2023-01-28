@@ -7,10 +7,17 @@ package proyecto;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.table.DefaultTableModel;
+import mds.ReportePaquetes;
+import mds.conexion1;
 
 /**
  *
@@ -24,7 +31,93 @@ public class EmpleadosPaquetes extends javax.swing.JFrame {
     private String cedula = "";
     public EmpleadosPaquetes(String cedula) {
         initComponents();
+        Integer fila1 = jtblPaquetes.getSelectedRow();
+        jtblPaquetes.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                if (jtblPaquetes.getSelectedRow() != -1) {
+                    int fila = jtblPaquetes.getSelectedRow();
+                    jtxtIDPaquete.setText(jtblPaquetes.getValueAt(fila, 0).toString());
+                }
+            }
+        });
+
+        this.cedula = cedula;
+
+        try {
+            DefaultTableModel modelo = new DefaultTableModel();
+            String titulos[] = {"CEDULA", "NOMBRE", "APELLIDO", "CARGO", "RUTA"};
+            String registros[] = new String[5];
+            modelo = new DefaultTableModel(null, titulos);
+            jtblEmpleado.setModel(modelo);
+            mds.Conexion cn = new mds.Conexion();
+            Connection cc = cn.conectar();
+            String sql = "select * from empleados where ced_emp ='" + this.cedula + "'";
+            Statement psd = cc.createStatement();
+            ResultSet rs = psd.executeQuery(sql);
+            while (rs.next()) {
+                registros[0] = rs.getString("ced_emp");
+                registros[1] = rs.getString("nom_emp");
+                registros[2] = rs.getString("ape_emp");
+                registros[3] = rs.getString("rol_emp");
+                registros[4] = rs.getString("ruta_emp");
+                modelo.addRow(registros);
+            }
+            jtblEmpleado.setModel(modelo);
+        } catch (SQLException ex) {
+            Logger.getLogger(mds.Datos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        //////////////////////////////////
+        try {
+            mds.Conexion cn2 = new mds.Conexion();
+            Connection cc2 = cn2.conectar();
+            String sql1 = "select * from asignaciones where ced_emp ='" + this.cedula + "'";
+            Statement psd1 = cc2.createStatement();
+            ResultSet rs1 = psd1.executeQuery(sql1);
+            if (rs1.next()) {
+                int asignacion;
+                String estado;
+                DefaultTableModel modelo = new DefaultTableModel();
+                String titulos[] = {"CODIGO", "Nombre", "Apellido", "ARTICULO", "TIPO", "LOCAL", "DESTINO", "ESTADO"};
+                String[] registros = new String[8];
+                modelo = new DefaultTableModel(null, titulos);
+                jtblPaquetes.setModel(modelo);
+                conexion1 cc = new conexion1();
+                Connection cn = cc.conectar();
+                String sql = "";
+                sql = "select * from paquetes ";
+                Statement psd = cn.createStatement();
+                ResultSet rs = psd.executeQuery(sql);
+                while (rs.next()) {
+                    registros[0] = rs.getString("id_paq");
+                    registros[1] = rs.getString("nom_des_paq");
+                    registros[2] = rs.getString("ape_des_paq");
+                    registros[3] = rs.getString("art_paq");
+                    registros[4] = rs.getString("tipo_paq");
+                    registros[5] = rs.getString("dir_paq");
+                    registros[6] = rs.getString("dir_lleg_paq");
+                    registros[7] = rs.getString("est_paq");
+                    asignacion = Integer.valueOf(rs.getString("asig_paq"));
+                    estado = rs.getString("est_paq");
+                    if (asignacion == 1) {
+                    } else if (estado.equals("No Entregado")) {
+                        modelo.addRow(registros);
+                    }
+
+                }
+
+                jtblPaquetes.setModel(modelo);
+            } else {
+                JOptionPane.showMessageDialog(this, "No tiene asignado paquetes");
+            }
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, ex);
+        }
+
     }
+
     
     public void entregarPaquetes(){
         try {
@@ -170,6 +263,8 @@ public class EmpleadosPaquetes extends javax.swing.JFrame {
 
     private void jbtnReportePaquetesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnReportePaquetesActionPerformed
         // TODO add your handling code here:
+        ReportePaquetes r = new ReportePaquetes("");
+        r.setVisible(true);
     }//GEN-LAST:event_jbtnReportePaquetesActionPerformed
 
     private void jbtnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSalirActionPerformed
