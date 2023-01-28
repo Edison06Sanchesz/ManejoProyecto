@@ -5,6 +5,12 @@
  */
 package proyecto;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
@@ -43,6 +49,46 @@ public class AsignarPaquetes extends javax.swing.JFrame {
         
     }
 
+    public void guardarAsignacionessRutas(){
+        try {
+            String ced_emp, id_paq, sal_cbx, lle_cbx;
+            mds.Conexion cn = new mds.Conexion();
+            Connection cc = cn.conectar();
+            ced_emp = jtxtCedula.getText();
+            sal_cbx = jcbxSalida.getSelectedItem().toString();
+            lle_cbx = jcbxLlegada.getSelectedItem().toString();
+            String sql = "insert into asignaciones (ced_emp,sal_paq,lle_paq) values (?,?,?)";
+            PreparedStatement psd = cc.prepareStatement(sql);
+            psd.setString(1, ced_emp);
+            psd.setString(2, sal_cbx);
+            psd.setString(3, lle_cbx);
+            
+            int n4 = psd.executeUpdate();
+            
+            if (n4>0) {
+                JOptionPane.showMessageDialog(null, "Se inserto correctamente");
+                //
+                //
+                String sql1 = "update empleados set ruta_emp= '" + jcbxSalida.getSelectedItem().toString() + "-" + jcbxLlegada.getSelectedItem().toString()
+                        + "' where ced_emp= '" + jtxtCedula.getText() + "' and rol_emp = 'Repartidor'";
+                PreparedStatement psd1 = cc.prepareStatement(sql1);
+                psd1.executeUpdate();
+                int n2 = psd1.executeUpdate();
+                if (n2 > 0) {
+                    //
+                    //
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error");
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Error");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error Guardar empleados");
+        }
+        
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
