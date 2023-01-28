@@ -15,7 +15,8 @@ public class MainProyecto {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        LoginMain dato=new LoginMain();
+        dato.setVisible(true);
     }
     
 }
