@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
+import mds.conexion1;
 
 /**
  *
@@ -116,6 +117,41 @@ public class AsignarPaquetes extends javax.swing.JFrame {
             jtblRepartidores.setModel(modelo);
         } catch (SQLException ex) {
             Logger.getLogger(mds.Datos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void cargarTablaPaquetes() {
+        try {
+            int asignacion;
+            DefaultTableModel modelo = new DefaultTableModel();
+            String titulos[] = {"CODIGO", "Nombre", "Apellido", "ARTICULO", "TIPO", "LOCAL", "DESTINO"};
+            String[] registros = new String[8];
+            modelo = new DefaultTableModel(null, titulos);
+            jtblPaquetes.setModel(modelo);
+            Conexion cc = new Conexion();
+            Connection cn = cc.conectar();
+            String sql = "";
+            sql = "select * from paquetes ";
+            Statement psd = cn.createStatement();
+            ResultSet rs = psd.executeQuery(sql);
+            while (rs.next()) {
+                registros[0] = rs.getString("id_paq");
+                registros[1] = rs.getString("nom_des_paq");
+                registros[2] = rs.getString("ape_des_paq");
+                registros[3] = rs.getString("art_paq");
+                registros[4] = rs.getString("tipo_paq");
+                registros[5] = rs.getString("dir_paq");
+                registros[6] = rs.getString("dir_lleg_paq");
+                registros[7] = rs.getString("est_paq");
+                asignacion = Integer.valueOf(rs.getString("asig_paq"));
+                if (asignacion == 0) {
+                    modelo.addRow(registros);
+                }
+
+            }
+            jtblPaquetes.setModel(modelo);
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, ex);
         }
     }
     /**
