@@ -53,7 +53,7 @@ public class AsignarPaquetes extends javax.swing.JFrame {
         
     }
 
-    public void guardarAsignacionessRutas(){
+    public void guardarAsignacionesRutas(){
         try {
             String ced_emp, id_paq, sal_cbx, lle_cbx;
             mds.Conexion cn = new mds.Conexion();
@@ -93,6 +93,63 @@ public class AsignarPaquetes extends javax.swing.JFrame {
         
     }
     
+    public void guardarAsignacionesPaquetes() {
+        if (jtxtCedula.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese cedula");
+            jtxtCedula.requestFocus();
+        } else if (jtxtPaquete.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese nombre");
+            jtxtPaquete.requestFocus();
+        } else if (jcbxSalida.getSelectedItem().equals("")) {
+            JOptionPane.showMessageDialog(null, "Ingrese apellido");
+            jcbxSalida.requestFocus();
+        } else if (jcbxLlegada.getSelectedItem().equals("")) {
+            JOptionPane.showMessageDialog(null, "Ingrese salario");
+            jcbxLlegada.requestFocus();
+
+        } else {
+            try {
+                String ced_emp, id_paq, sal_cbx, lle_cbx;//usu_emp, con_emp;
+
+                mds.Conexion cn = new mds.Conexion();
+                Connection cc = cn.conectar();
+                ced_emp = jtxtCedula.getText();
+                id_paq = jtxtPaquete.getText();
+                sal_cbx = jcbxSalida.getSelectedItem().toString();
+                lle_cbx = jcbxLlegada.getSelectedItem().toString();
+
+                String sql = "insert into asignaciones (ced_emp,id_paq) values (?,?)";
+                PreparedStatement psd2 = cc.prepareStatement(sql);
+                psd2.setString(1, ced_emp);
+                psd2.setString(2, id_paq);
+
+                int n1 = psd2.executeUpdate();
+                if (n1 > 0) {
+                    JOptionPane.showMessageDialog(null, "Se inserto correctamente");
+                    this.cargarTablaPaquetes();
+                    this.cargarTablaRepartidores();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error");
+                }
+                
+                String sql2 = "update paquetes set asig_paq= 1 where id_paq='" + jtxtPaquete.getText()
+                        + "' ";
+                PreparedStatement psd = cc.prepareStatement(sql2);
+                psd.executeUpdate();
+                int n3 = psd.executeUpdate();
+                if (n3 > 0) {
+                    this.cargarTablaPaquetes();
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error");
+                }
+                
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Error al Asignar Paquetes");
+            }
+        }
+    }
+
     
     public void cargarTablaRepartidores() {
         try {
