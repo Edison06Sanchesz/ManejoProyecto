@@ -29,6 +29,8 @@ public class AsignarPaquetes extends javax.swing.JFrame {
      */
     public AsignarPaquetes() {
         initComponents();
+        cargarTablaRepartidores();
+        cargarTablaPaquetes();
         Integer fila = jtblRepartidores.getSelectedRow();
         jtblRepartidores.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
             @Override
@@ -267,6 +269,11 @@ public class AsignarPaquetes extends javax.swing.JFrame {
         jcbxLlegada.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Llegada", "Ambato", "Riobamba", "Quito", "Cuenca" }));
 
         jbtnGuardarRutas.setText("Guardar");
+        jbtnGuardarRutas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnGuardarRutasActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("Paquetes");
 
@@ -424,11 +431,18 @@ public class AsignarPaquetes extends javax.swing.JFrame {
 
     private void jbtnGuardarPaquetesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnGuardarPaquetesActionPerformed
         // TODO add your handling code here:
+        guardarAsignacionesPaquetes();
     }//GEN-LAST:event_jbtnGuardarPaquetesActionPerformed
 
     private void jbtnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSalirActionPerformed
         // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_jbtnSalirActionPerformed
+
+    private void jbtnGuardarRutasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnGuardarRutasActionPerformed
+        // TODO add your handling code here:
+        guardarAsignacionesRutas();
+    }//GEN-LAST:event_jbtnGuardarRutasActionPerformed
 
     /**
      * @param args the command line arguments
