@@ -31,7 +31,7 @@ public class Empleados extends javax.swing.JFrame {
      */
     public Empleados() {
         initComponents();
-        CargarTabla();
+        cargarTabla();
         jtxtID.setEditable(false);
         jtblPaquetes.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
             @Override
@@ -50,7 +50,7 @@ public class Empleados extends javax.swing.JFrame {
         });
     }
 
-    public void Agregar() {
+    public void agregar() {
         try {
             if (jtxtNombre.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(this, "Ingrese el Nombre ");
@@ -87,14 +87,14 @@ public class Empleados extends javax.swing.JFrame {
             int n = psd.executeUpdate();
             if (n > 0) {
                 JOptionPane.showMessageDialog(this, "Se inserto Correctamente");
-                CargarTabla();
+                cargarTabla();
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(this, "No se realizo la transaccion, error !!");;
         }
     }
 
-    public void CargarTabla() {
+    public void cargarTabla() {
         try {
             DefaultTableModel modelo = new DefaultTableModel();
             String titulos[] = {"CODIGO", "Nombre", "Apellido", "ARTICULO", "TIPO", "LOCAL", "DESTINO"};
@@ -136,7 +136,7 @@ public class Empleados extends javax.swing.JFrame {
                 int n = psd.executeUpdate();
                 if (n > 0) {
                     JOptionPane.showMessageDialog(this, "Eliminado satisfactoriamente");
-                    CargarTabla();
+                    cargarTabla();
                 } else {
                     System.out.println("No se ha eliminado");
                 }
@@ -168,7 +168,7 @@ public class Empleados extends javax.swing.JFrame {
             int n = psd.executeUpdate();
             if (n > 0) {
                 JOptionPane.showMessageDialog(null, "Se actualizo correctamente");
-                CargarTabla();
+                cargarTabla();
 
             }
         } catch (SQLException ex) {
@@ -251,12 +251,32 @@ public class Empleados extends javax.swing.JFrame {
         jcbxDestino.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DESTINO", "Salida", "Ambato", "Riobamba", "Quito", "Cuenca" }));
 
         jbtnGuardar.setText("Guardar");
+        jbtnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnGuardarActionPerformed(evt);
+            }
+        });
 
         jbtnModificar.setText("Modificar");
+        jbtnModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnModificarActionPerformed(evt);
+            }
+        });
 
         jbtnEliminar.setText("Eliminar");
+        jbtnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnEliminarActionPerformed(evt);
+            }
+        });
 
         jbtnSalir.setText("Salir");
+        jbtnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnSalirActionPerformed(evt);
+            }
+        });
 
         jScrollPane2.setViewportView(jtblPaquetes);
 
@@ -368,6 +388,26 @@ public class Empleados extends javax.swing.JFrame {
     private void jtxtApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtApellidoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtxtApellidoActionPerformed
+
+    private void jbtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnGuardarActionPerformed
+        // TODO add your handling code here:
+        agregar();
+    }//GEN-LAST:event_jbtnGuardarActionPerformed
+
+    private void jbtnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnModificarActionPerformed
+        // TODO add your handling code here:
+        actualizarDatos();
+    }//GEN-LAST:event_jbtnModificarActionPerformed
+
+    private void jbtnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnEliminarActionPerformed
+        // TODO add your handling code here:
+        eliminarPaquete();
+    }//GEN-LAST:event_jbtnEliminarActionPerformed
+
+    private void jbtnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSalirActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jbtnSalirActionPerformed
 
     /**
      * @param args the command line arguments
