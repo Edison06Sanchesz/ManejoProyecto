@@ -6,6 +6,7 @@
 package proyecto;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -143,6 +144,35 @@ public class Empleados extends javax.swing.JFrame {
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex);
+        }
+    }
+
+    public void actualizarDatos() {
+        try {
+            String id_paq, nom_des_paq, ape_des_paq, art_paq, tipo_paq, dir_paq;
+            Integer sal_emp;
+            conexion1 cn = new conexion1();
+            Connection cc = cn.conectar();
+            id_paq = jtxtID.getText();
+            nom_des_paq = jtxtNombre.getText();
+            ape_des_paq = jtxtApellido.getText();
+            art_paq = jtxtArticulo.getText();
+            tipo_paq = jcbxTipo.getSelectedItem().toString();
+            dir_paq = jcbxLocal.getSelectedItem().toString();
+            
+            String sql = "";
+            sql = "update paquetes set nom_des_paq='" + nom_des_paq + "',ape_des_paq='" + ape_des_paq + "',art_paq='" + art_paq
+                    + "',tipo_paq='" + tipo_paq + "',dir_paq='" + dir_paq + "'Where id_paq='" + id_paq + "'";
+            PreparedStatement psd = cc.prepareStatement(sql);
+            psd.executeUpdate();
+            int n = psd.executeUpdate();
+            if (n > 0) {
+                JOptionPane.showMessageDialog(null, "Se actualizo correctamente");
+                CargarTabla();
+
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "No se puede realizar la transacion");
         }
     }
 
