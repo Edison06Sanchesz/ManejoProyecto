@@ -121,10 +121,10 @@ public class RegistroEmpleado extends javax.swing.JFrame {
             ResultSet rs = psd.executeQuery(sql);
             while(rs.next()){
                 registros[0] = rs.getString("ced_emp");
-                registros[0] = rs.getString("nom_emp");
-                registros[0] = rs.getString("ape_emp");
-                registros[0] = rs.getString("sal_emp");
-                registros[0] = rs.getString("rol_emp");
+                registros[1] = rs.getString("nom_emp");
+                registros[2] = rs.getString("ape_emp");
+                registros[3] = rs.getString("sal_emp");
+                registros[4] = rs.getString("rol_emp");
                 modelo.addRow(registros);
             }
             jtblEmpleados.setModel(modelo);
