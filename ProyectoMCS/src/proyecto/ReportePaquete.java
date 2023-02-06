@@ -47,8 +47,8 @@ public class ReportePaquete extends javax.swing.JFrame {
                 registros[4] = rs.getString("tipo_paq");
                 registros[5] = rs.getString("dir_paq");
                 registros[6] = rs.getString("dir_lleg_paq");
-                registros[5] = rs.getString("est_paq");
-                registros[5] = rs.getString("asig_paq");
+                registros[7] = rs.getString("est_paq");
+                registros[8] = rs.getString("asig_paq");
               
                 
                 modelo.addRow(registros);
